@@ -39,12 +39,13 @@ class Tools():
 
     def str_2_list(self, tgt_seq):
         """
-
-        :param tgt_seq:
-        :return:
+        把字符序列还原list序列
+        :param tgt_seq: '[2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 3]'
+        :return: ['2', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '3']
         """
         ss = []
-        for s in tgt_seq:  # 把字符序列还原list序列
+        for s in tgt_seq:  # 
+            # lstrip在字符串最左侧删除'['字符
             s = s.lstrip('[').rstrip(']').replace(' ', '').split(',')
             ss.append([int(i) for i in s])
 
@@ -68,13 +69,16 @@ class Tools():
         """
         seq = self.str_2_list(seq)  # 还原序列
         seq_max_len = max(len(s) for s in seq)  # 该批次序列中的最大长度
-        # 以最大长度补齐该批次的序列并转化为tensor
+        # 以局部最大长度补齐该批次的序列并转化为tensor
+            # Variable包括tensor，以支持计算图以及后续的反向操作
+            # LongTensor创建长整数，以表示序列、索引等。
         seq = Variable(torch.LongTensor([self.pad_seq(s, seq_max_len) for s in seq]))
 
         return seq.to(device=param.device)
 
     def batch_2_tensor(self, batch_data):
         """
+        train/val中的数据预处理之一：将2*batch_size*seq_len的数据处理，准备送入transformer模型
 
         :param batch_data: B*L 该批次的数据
         :return:
@@ -520,18 +524,22 @@ class Transformer(nn.Module):
         :param tgt_max_len: 全部目标序列的最大长度
         """
         super(Transformer, self).__init__()
+        print(input_vocab_num, src_max_len, target_vocab_num, tgt_max_len)
         self.encoder = Encoder(input_vocab_num, src_max_len)
         self.decoder = Decoder(target_vocab_num, tgt_max_len)
         self.word_prob_map = nn.Linear(param.d_model, target_vocab_num, bias=False)  # 最后的线性转换层 D*M
+            # 预测词语概率分布时的操作是将隐藏状态进行线性映射，此时的隐藏状态包含词间上下文关系和位置偏差，无需额外bias（平移操作）
+            # bias=False强制模型学习向量本身词间依赖，不使用额外的偏移
+
         nn.init.xavier_normal_(self.word_prob_map.weight)  # 初始化线性层权重分头
         # self.softmax = nn.LogSoftmax(dim=0)  # 最后的softmax层 使用交叉熵，就不用做softmax了
 
     def forward(self, src_seq, tgt_seq):
         """
 
-        :param src_seq: 输入批次序列 B*L
-        :param tgt_seq: 目标批次序列 B*L
-        :return: 映射到目标序列单词表的输出 B*L*M
+        :param src_seq: 输入批次序列 B*L, eg: 128*27
+        :param tgt_seq: 目标批次序列 B*L, eg: 128*28
+        :return: 映射到目标序列单词表的输出 B*L*M, eg: 3456*3721
         """
 
         tgt_seq = tgt_seq[:, :-1]  # TODO 这里为什么要截断最后一个
@@ -553,12 +561,20 @@ class Transformer(nn.Module):
 class Criterion():
 
     def cal_loss(self, real_tgt, pre_tgt):
+        """
+        基于交叉熵损失函数cross_entropy，计算real和pred的损失，并计算准确率
+         :param real_tgt: 
+         :param pre_tgt: 
+        return: 
+        """
+
         loss = F.cross_entropy(pre_tgt, real_tgt, ignore_index=param.pad, reduction=param.loss_cal)  # 计算损失
 
-        pre = pre_tgt.max(1)[1]
+        pre = pre_tgt.max(1)[1]     # max(1)对维度1进行处理，返回数值和索引两个方面
         real = real_tgt.contiguous().view(-1)
-        non_pad_mask = real.ne(param.pad)
         correct = pre.eq(real)
+
+        non_pad_mask = real.ne(param.pad)   # 非填充、有效部分
         correct = correct.masked_select(non_pad_mask).sum().item()
 
         return loss, correct
@@ -586,7 +602,7 @@ class SpecialOptimizer():
     def step_update_lrate(self):  # 优化器更新学习率和步进
         self.step_num += 1  # 批次训练一次，即为步数一次，自加1
 
-        # 生成当前步的学习率
+    
         lr = np.power(self.d_model, -0.5) * np.min([np.power(self.step_num, -0.5),
                                                     np.power(self.warmup_steps, -1.5) * self.step_num])
 
@@ -928,16 +944,33 @@ class Sequence2Sequence():
 
             epoch_start_time = datetime.datetime.now()  # 一个轮次模型的计算开始时间
             for step, batch_data in tqdm(enumerate(train_loader), desc=' 训练', leave=False):  # 迭代计算批次数据
+                    # print(len(batch_data), len(batch_data[0]), batch_data[0][0], batch_data[1][0])
+                    # 2 128 [2, 39, 29, 289, 2343, 107, 39, 469, 38, 39, 150, 469, 133, 14, 3] [2, 13, 27, 31, 39, 138, 2692, 14, 39, 841, 16, 3]，src_len 此时并不等于 tgt_len
                 batch_start_time = datetime.datetime.now()  # 一个批次计算的开始时间
                 total_step += 1
 
                 self.optimizer.zero_grad()  # 优化器梯度清零
                 src_seq, tgt_seq = tool.batch_2_tensor(batch_data)  # 得到输入和目标序列 B*L B*L
+                    # print(len(src_seq), len(src_seq[0]), rc_seq[0], tgt_seq[0])
+                    #  batch_size:128, seq_len, tensor([   2,  596,    9,   79, 1344,  253,   39, 1345,  776,  134,  624,  107,
+                    # 1346,   14,    3,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+                    #    0,    0,    0], device='cuda:0') tensor([   2,   80, 1289,   48,   60,  831, 1290,  830,    1,   48,   41,  180,
+                    #   32,  194, 1291,  102,   16,    3,    0,    0,    0,    0,    0,    0,
+                    #    0,    0,    0,    0,    0,    0], device='cuda:0')
                 self.transformer.train()
                 pre_tgt = self.transformer(src_seq, tgt_seq)
-                real_tgt = tgt_seq[:, 1:].contiguous().view(-1) # 实际的目标序列token
+                    # print(src_seq.shape, tgt_seq.shape, pre_tgt.shape)
+                    # 128*27, 128*28, 3456*3721
+                real_tgt = tgt_seq[:, 1:].contiguous().view(-1) # 一般丢弃首个索引，contiguous()返回内存连续，为view()提高内存效率
+                    # print(real_tgt.shape)
+                    # 3456
+
                 # 采用交叉熵损失函数，那么最后一步就不需要做softmax了！！！
                 loss, correct = self.criterion.cal_loss(real_tgt, pre_tgt)
+                    # print(real_tgt.dtype, pre_tgt.dtype, loss.dtype)
+                    # torch.int64 torch.float32 torch.float32
+                    # print(real_tgt.shape, pre_tgt.shape)
+                    # 3456, 3456*3721
                 loss.backward(retain_graph=True)  # 损失反向传播(计算损失后还保留变量)
                 learn_rate = self.optimizer.step_update_lrate()  # 更新学习率，优化器步进
 
@@ -974,6 +1007,7 @@ class Sequence2Sequence():
                   '| 准确率↑ACC %8.5f' % acc,
                   '| 首批损失 %7.5f' % each_loss[0],
                   '| 尾批损失 %7.5f' % each_loss[-2])
+            # 最后一个batch的数据可能不够
 
             self.evaluate(val_loader, epoch)  # 每一个训练轮次结束，验证一次
 
@@ -1037,6 +1071,7 @@ class Sequence2Sequence():
         with open('./input_target_infer.txt', 'w', encoding='utf-8') as f:
 
             for step, batch_dat in tqdm(enumerate(data_loader), desc='推理测试开始', leave=True):  # 迭代推理批次数据
+                
                 src_seq, tgt_seq = tool.batch_2_tensor(batch_dat)  # 获得输入序列和实际目标序列
                 src_pos = tool.seq_2_pos(src_seq)  # 得到输入序列的pos位置向量
                 all_pre_seq, all_pre_seq_p = infer.translate_batch(src_seq, src_pos)  # 获得所有预测的结果和对应的概率
@@ -1061,21 +1096,26 @@ class Sequence2Sequence():
 def main(train_src, train_tgt, val_src, val_tgt, test_src, test_tgt):
     #========================准备数据============================#
     data_obj = DataProcess(train_src, train_tgt, val_src, val_tgt, test_src, test_tgt)  # 训练数据对象
+    
+    # 根据train/val/test中的所有单词，构建单词序列表。 
     src_tgt, src_lang, tgt_lang = data_obj.get_src_tgt_data()
-    print(f"debug print.\n src_tgt:{src_tgt}\n src_lang:{src_lang.index2word}\n tgt_lang:{tgt_lang.index2word}")
+        # print(f"debug print.\n src_tgt:{src_tgt}\n src_lang:{src_lang.index2word}\n tgt_lang:{tgt_lang.index2word}")
     *_, src_tgt_seq_train = data_obj.word_2_index('train', src_lang, tgt_lang)  # 训练数据
     *_, src_tgt_seq_val = data_obj.word_2_index('val', src_lang, tgt_lang)  # 验证数据
     *_, src_tgt_seq_test = data_obj.word_2_index('test', src_lang, tgt_lang)  # 测试数据
 
-    # 打包批次数据
+        # print(src_tgt_seq_train[0], len(src_tgt_seq_train),  src_tgt_seq_train[0][0][1])  # 这里不方便使用array，因为dim不统一
+        # ['[2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 3]', '[2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 15, 16, 3]'] 29001
+        # shape为str：2*L_seq，即：N*2*L_seq。dataloader
+    # print(len(src_tgt_seq_train[0][0][0]))  # shape of 29001*2*44
     train_data_loader = DataLoader(src_tgt_seq_train, param.batch_size, True, drop_last=False)
     val_data_loader = DataLoader(src_tgt_seq_val, param.batch_size, False, drop_last=False)
     test_data_loader = DataLoader(src_tgt_seq_test, param.infer_batch, True, drop_last=False)  # 批序列推理预测
 
     # ========================定义模型============================#
     transformer = Transformer(  # 定义transformer模型
-        input_vocab_num=src_lang.n_words,
-        target_vocab_num=tgt_lang.n_words,
+        input_vocab_num=src_lang.n_words,       # 源域词典的总数
+        target_vocab_num=tgt_lang.n_words,      # 目标域词典的总数
         src_max_len=data_obj.src_max_len,
         tgt_max_len=data_obj.tgt_max_len).to(param.device)
 

@@ -18,6 +18,9 @@ param = Parameters()
 
 # 字符统计类
 class Lang:
+    """
+    Lang(uage)，语言——字符统计类
+    """    
     def __init__(self, name):
         self.name = name
         self.trimmed = False
@@ -25,13 +28,14 @@ class Lang:
         self.word2count = {}
         # self.index2word = {0: "PAD", 1: "SOS", 2: "EOS"}
         self.index2word = {0: '<blank>', 1: '<unk>', 2: '<s>', 3: '</s>'}
-        self.n_words = 4  # 初始字典有4个字符，{空白，位置，句首，句尾}
+        self.n_words = 4  # 初始字典有4个字符，{空白，未知，句首，句尾}
         self.seq_max_len = 0
 
     def index_word(self, word):
         """
-        对word进行处理，新增入字典，或增加统计个数
-        """
+        在index2word、word2index和word2count等三个字典中新增word，或增加word键所在的值
+        param word: 序列中的单词
+        """        
         if word not in self.word2index:
             self.word2index[word] = self.n_words
             self.word2count[word] = 1
@@ -41,11 +45,19 @@ class Lang:
             self.word2count[word] += 1
 
     def index_words(self, sentence):
+        """
+        依次处理sentence中的单词，将其放入Lang的字典中
+        param sentence: 包含单词的序列
+        """        
         for word in sentence.split(' '):
             self.index_word(word)
 
     # Remove words below a certain count threshold
     def trim(self, min_count):
+        """
+        仅保存单词频率大于min_count的单词，并更新Lang(self)的三个字典
+         :param min_count: 字典中保留单词的最低频率
+        """         
         if self.trimmed: return
         self.trimmed = True
 
@@ -88,10 +100,9 @@ class DataProcess(object):
 
     def unicode_to_ascii(self, s):
         """
-        消除文字因编码造成的差异
-
+        字符串编码预处理，消除编码差异
         """
-        # 'NFD'，Normalization Form Decompose; 将组合字符分解为基本字符+修饰字符
+        # 'NFD'，Normalization Form Decompose; 将组合字符分解为基本字符+修饰字符，然后再统一取出
         # 字符类别：如'Lu'(Letter, Uppercase), 'Nd'(Number,Decimal Digit, 数字), "Mn"（Mark,Non-Spacing, 标记字母）
         return ''.join(
             c for c in unicodedata.normalize('NFD', s)
@@ -99,13 +110,23 @@ class DataProcess(object):
         )
     
     def normalize_string(self, s):
+        """
+        格式化字符串，包括小写化、包括目标字符、消除多余空格
+         :param s: eg. Two young, White males are outside near many bushes.
+        return: eg. two young , white males are outside near many bushes .
+        """        
         s = self.unicode_to_ascii(s.lower().strip())  # strip剔除首尾空格
         s = re.sub(r"([,.!?])", r" \1 ", s)  # 标签符号包裹在空格中
-        s = re.sub(r"[^a-zA-Z,.!?]+", r" ", s)  # 剔除非法字符
-        s = re.sub(r"\s+", r" ", s).strip()  # 剔除多余空格
+        s = re.sub(r"[^a-zA-Z,.!?]+", r" ", s)  # 将非目标字符处理为空格
+        s = re.sub(r"\s+", r" ", s).strip()  # \s+表示至少一个空格，sub进行替换；
         return s
 
     def filter_pairs(self, pairs):
+        """
+        检查句子其有效长度是否在[param.min_len, param.max_len]中([0, 100])
+         :param pairs(list): [seq1, seq2, ...]
+        return: [seq1, seq2, ...]
+        """        
         filtered_pairs = []
         for pair in pairs:
             sentence_num = 0
@@ -121,14 +142,28 @@ class DataProcess(object):
         return filtered_pairs
 
     def indexes_from_sentence(self, lang, sentence):
-        # 前后加上sos和eos。注意句子的句号也要加上，如果这个词没有出现在词典中（已经去除次数小于限定的词），以unk填充
+        """
+        基于src/tgt的lang类，得到sentence中单词对应的索引列表
+        param lang: src/tgt统计单词的类
+        param sentence: 句子
+        return: 句首索引 + 句内单词索引 + 句末索引
+        """        
+        # 前后加上sos和eos。注意句子的句号也要加上;
+        # get(key, default)如果这个词没有出现在词典中（已经去除次数小于限定的词），以unk填充
         return [param.sos] + [lang.word2index.get(word, param.unk) for word in sentence.split(' ')] + [param.eos]
 
     def read_file(self, data):
+        """
+        输入文件路径，返回句子列表
+         :param data: train/val/test_src, 
+        return: 经过统一编码、过滤长度的句子列表 [seq1, seq2, ]
+        """        
         # open返回文件obj, read()获取文件流
         content = open(data, encoding='utf-8').read().split('\n')  # 读取文件并处理
+            # content: list of seq(str) 
+        tmp = [self.normalize_string(s) for s in content]
+        
         content = self.filter_pairs([self.normalize_string(s) for s in content])  # 规范化字符，并限制长度
-
         return content
 
     def get_src_tgt_data(self):
@@ -136,8 +171,8 @@ class DataProcess(object):
         Input:
             train/val/test中的src, from _init_函数
         Exec:
-            读取
-            创建源语言Lang和目标语言Lang对象，用于建立词汇表
+            创建源语言Lang和目标语言Lang对象(包含word2index, index2word等属性). 
+            用于建立词汇表(如 4: 'two', t: 'young')
         Return:
             src_tgt:源-目标句对列表
             src_long:源语言词汇表
@@ -161,11 +196,12 @@ class DataProcess(object):
         
             # print(len(src_content), len(tgt_content), len(src_tgt))
         # 修剪单词表，少于限定次数将被删除
-        print("修剪源域中的单词数")
+        print("修剪源域单词")
         src_lang.trim(param.min_word_count)
-        print("修剪目标中的单词数")
+        print("修剪目标域单词")
         tgt_lang.trim(param.min_word_count)
 
+        # 前后两个字符，加上最大序列的长度
         self.src_max_len += max([len(s[0].split(' ')) for s in src_tgt])  # 全部输入序列的最大长度
         self.tgt_max_len += max([len(s[1].split(' ')) for s in src_tgt])  # 全部目标序列的最大长度
 
@@ -173,6 +209,17 @@ class DataProcess(object):
         return src_tgt, src_lang, tgt_lang
 
     def word_2_index(self, mode, src_lang, tgt_lang):
+        """
+        Input:
+            mode:'t/v/t', lang of src or tgt
+        Exec:
+            get src/tgt seq by mode.
+            get the index of src/tgt seq in src/tgt lang.
+        Return:
+            索引列表
+            src_list, tgt_list, src_tgt_list(N*2*L_seq')
+            
+        """
         src = 0
         tgt = 0
         if mode == 'train':
@@ -199,8 +246,12 @@ class DataProcess(object):
         src_tgt_list = []
 
         for i in range(len(src_seq)):  # 序列字符token转化为索引token
+            # 即处理每个一句子，返回其在***_lang中的index列表
             src_list.append(self.indexes_from_sentence(src_lang, src_seq[i]))
             tgt_list.append(self.indexes_from_sentence(tgt_lang, tgt_seq[i]))
+                # if i == 0:
+                #     print(src_seq[i], src_list[-1], tgt_list[-1])
+                # 将src_list和tgt_list以str的形式，存入src_tgt_list中
             src_tgt_list.append([str(self.indexes_from_sentence(src_lang, src_seq[i])),
                                  str(self.indexes_from_sentence(tgt_lang, tgt_seq[i]))])
 
