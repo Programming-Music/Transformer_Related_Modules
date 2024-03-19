@@ -1131,7 +1131,21 @@ def main(train_src, train_tgt, val_src, val_tgt, test_src, test_tgt):
     seq2seq = Sequence2Sequence(transformer= transformer, optimizer=optimizer, criterion=criterion)
 
     #========================训练（验证）模型=====================#
-    seq2seq.train_val(train_data_loader, val_data_loader)
+    # seq2seq.train_val(train_data_loader, val_data_loader)
+
+    #========================保存/加载模型=====================#
+    model_dir = "../../../trans_de2en_files"
+    os.makedirs(model_dir, exist_ok=True)
+    model_path = os.path.join(model_dir, "transformer.pt")
+    model_dict_path = os.path.join(model_dir, "transformer_dict.pt")
+    
+    # (1) 保存和加载模型参数
+    # torch.save(seq2seq.transformer.state_dict(), model_dict_path)
+    # seq2seq.transformer.load_state_dict(torch.load(model_dict_path))
+
+    # (2) 保存和加载整个模型
+    # torch.save(seq2seq.transformer, model_path)
+    seq2seq.transformer = torch.load(model_path)
 
     #========================模型推理测试===========================#
     seq2seq.inference(test_data_loader, src_lang, tgt_lang, data_obj.tgt_max_len)
