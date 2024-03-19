@@ -524,7 +524,8 @@ class Transformer(nn.Module):
         :param tgt_max_len: 全部目标序列的最大长度
         """
         super(Transformer, self).__init__()
-        print(input_vocab_num, src_max_len, target_vocab_num, tgt_max_len)
+        print(f"源域词表长度:{input_vocab_num},最大句子长度:{src_max_len}")
+        print(f"目标域词表长度:{target_vocab_num},最大句子长度:{tgt_max_len}")
         self.encoder = Encoder(input_vocab_num, src_max_len)
         self.decoder = Decoder(target_vocab_num, tgt_max_len)
         self.word_prob_map = nn.Linear(param.d_model, target_vocab_num, bias=False)  # 最后的线性转换层 D*M
@@ -895,7 +896,9 @@ class Beam():
             _, keys = self.sort_scores()
             hyps = [self.get_hypothesis(k) for k in keys]
             hyps = [[param.sos] + h for h in hyps]
+            # dec_seq = torch.tensor(hyps, dtype=torch.long)
             dec_seq = torch.LongTensor(hyps)
+                # print(f"hyps:{hyps}, dec_seq:{dec_seq}")  # 将数据处理为整形
 
         return dec_seq
 
@@ -903,8 +906,11 @@ class Beam():
         """ Walk back to construct the full hypothesis. """
         hyp = []
         for j in range(len(self.prev_ks) - 1, -1, -1):
+             
+                # int 64
+            k = k.type(torch.int32)
             hyp.append(self.next_ys[j+1][k])
-            k = self.prev_ks[j][k]
+            k = self.prev_ks[j][k].type(torch.int32)
 
         return list(map(lambda x: x.item(), hyp[::-1]))
 
@@ -943,7 +949,7 @@ class Sequence2Sequence():
             total_word_correct = 1  # 本轮次所有批次数据中单词正取的个数
 
             epoch_start_time = datetime.datetime.now()  # 一个轮次模型的计算开始时间
-            for step, batch_data in tqdm(enumerate(train_loader), desc=' 训练', leave=False):  # 迭代计算批次数据
+            for step, batch_data in tqdm(enumerate(train_loader), desc=' 训练', total=len(train_loader), leave=True):  # 迭代计算批次数据
                     # print(len(batch_data), len(batch_data[0]), batch_data[0][0], batch_data[1][0])
                     # 2 128 [2, 39, 29, 289, 2343, 107, 39, 469, 38, 39, 150, 469, 133, 14, 3] [2, 13, 27, 31, 39, 138, 2692, 14, 39, 841, 16, 3]，src_len 此时并不等于 tgt_len
                 batch_start_time = datetime.datetime.now()  # 一个批次计算的开始时间
@@ -1022,7 +1028,7 @@ class Sequence2Sequence():
         total_word_correct = 0  # 本轮次所有批次数据中单词正取的个数
 
         with torch.no_grad():  # 设置训练产生的损失不更新模型
-            for step, batch_data in tqdm(enumerate(data_loader), desc=' 验证--', leave=False):  # 迭代计算批次数据
+            for step, batch_data in tqdm(enumerate(data_loader), desc=' 验证--', total=len(data_loader), leave=True):  # 迭代计算批次数据
                 src_seq, tgt_seq = tool.batch_2_tensor(batch_data)  # 获取输入序列和验证序列
                 pre_tgt = self.transformer(src_seq, tgt_seq)  # 模型预测的目标序列
                 real_tgt = tgt_seq[:, 1:].contiguous().view(-1)  # 构建真实的目标序列
@@ -1070,7 +1076,7 @@ class Sequence2Sequence():
 
         with open('./input_target_infer.txt', 'w', encoding='utf-8') as f:
 
-            for step, batch_dat in tqdm(enumerate(data_loader), desc='推理测试开始', leave=True):  # 迭代推理批次数据
+            for step, batch_dat in tqdm(enumerate(data_loader), desc='推理测试开始', total=len(data_loader), leave=True):  # 迭代推理批次数据
                 
                 src_seq, tgt_seq = tool.batch_2_tensor(batch_dat)  # 获得输入序列和实际目标序列
                 src_pos = tool.seq_2_pos(src_seq)  # 得到输入序列的pos位置向量
@@ -1079,9 +1085,13 @@ class Sequence2Sequence():
                 for index, pre_seq in enumerate(all_pre_seq):
                     src_word_seq = index_2_word(source_lang, src_seq[index])
                     tgt_word_seq = index_2_word(target_lang, tgt_seq[index])
+                        # print(f"src_seq:{src_word_seq}, tgt_word_seq:{tgt_word_seq}")
+                        # 单词列表
                     for seq in pre_seq:
+                        # seq = seq.type(torch.int32)
                         new_seq = []
                         for i in seq:
+                            i = int(i)  # 注意索引必须为非负整数
                             if i != param.sos and i != param.eos and i != param.pad:
                                 new_seq.append(i)
                         pre_word_seq = [target_lang.index2word[idx] for idx in new_seq]
@@ -1134,7 +1144,7 @@ def main(train_src, train_tgt, val_src, val_tgt, test_src, test_tgt):
     # seq2seq.train_val(train_data_loader, val_data_loader)
 
     #========================保存/加载模型=====================#
-    model_dir = "../../../trans_de2en_files"
+    model_dir = "../../../trans_en2de_files"
     os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, "transformer.pt")
     model_dict_path = os.path.join(model_dir, "transformer_dict.pt")
