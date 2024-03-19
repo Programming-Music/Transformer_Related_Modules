@@ -1,5 +1,6 @@
-[*de-en*](https://github.com/scnu-dil/Reproduce_the_Transformer_model)
-通过阅读论文*Attention is all you need*来复现**Transformer**模型
+# 项目来源
+[通过阅读论文*Attention is all you need*来复现**Transformer**模型](https://github.com/scnu-dil/Reproduce_the_Transformer_model)
+
 
 # 已完成
 - [x] 输入数据处理部分
@@ -7,6 +8,8 @@
 - [x] transformer模型的验证部分
 - [x] transformer模型的推理部分
 - [x] 输出数据生成部分
+- [x] 添加参考论文和代码的链接
+- [x] 训练模型结束保存模型
 
 # 待完成
 - [ ] 将当前代码拆分为各个模块
@@ -14,8 +17,7 @@
 - [ ] 优化模型代码，添加更多注释
 - [ ] 构造输入参数约束函数
 - [ ] 添加命令行参数模式
-- [x] 添加参考论文和代码的链接
-- [ ] 训练模型结束保存模型
+
 
 # 使用方法
 + 当前就直接运行'all.py'文件即可；
