@@ -1,5 +1,5 @@
 # 项目来源
-[通过阅读论文*Attention is all you need*来复现**Transformer**模型](https://github.com/scnu-dil/Reproduce_the_Transformer_model)  
+[通过阅读论文*Attention is all you need*来复现**Transformer**模型](https://github.com/scnu-dil/Reproduce_the_Transformer_model) <代码推理部分需要修订!>    
 [transformers_elm](https://github.com/kingback156/transformers_elm)
 
 # 已完成

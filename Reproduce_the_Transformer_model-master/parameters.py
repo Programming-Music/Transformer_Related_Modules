@@ -41,11 +41,13 @@ class Parameters():
         # 服务器上最大只能跑64*6=384的batch_size，还可以优化
         # 128-4000, 64-8000，32-16000，256-2000
         # 32-16,000; 64-8,000; 128-4,000; 256-2,000; 512-1,000; 1024-500
-        self.batch_size = 128
+        self.batch_size = 64
 
         self.beam_search_left = 1
 
         self.epochs = 50
+        
+        self.Train = False
 
         self.use_gpu = True if torch.cuda.is_available() else False
 

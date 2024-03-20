@@ -1080,13 +1080,17 @@ class Sequence2Sequence():
                 
                 src_seq, tgt_seq = tool.batch_2_tensor(batch_dat)  # 获得输入序列和实际目标序列
                 src_pos = tool.seq_2_pos(src_seq)  # 得到输入序列的pos位置向量
+                print(f"src_seq:{src_seq}, src_pos:{src_pos}")
                 all_pre_seq, all_pre_seq_p = infer.translate_batch(src_seq, src_pos)  # 获得所有预测的结果和对应的概率
 
+                
                 for index, pre_seq in enumerate(all_pre_seq):
+                    # 找到源域和目标域
                     src_word_seq = index_2_word(source_lang, src_seq[index])
                     tgt_word_seq = index_2_word(target_lang, tgt_seq[index])
-                        # print(f"src_seq:{src_word_seq}, tgt_word_seq:{tgt_word_seq}")
-                        # 单词列表
+
+                        # print(f"pre_seq:{pre_seq}")
+                        # 预测的索引全零
                     for seq in pre_seq:
                         # seq = seq.type(torch.int32)
                         new_seq = []
@@ -1140,21 +1144,25 @@ def main(train_src, train_tgt, val_src, val_tgt, test_src, test_tgt):
     # 定义总的计算模型，开始训练（验证）和推理
     seq2seq = Sequence2Sequence(transformer= transformer, optimizer=optimizer, criterion=criterion)
 
-    #========================训练（验证）模型=====================#
-    # seq2seq.train_val(train_data_loader, val_data_loader)
-
-    #========================保存/加载模型=====================#
     model_dir = "../../../trans_en2de_files"
     os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, "transformer.pt")
     model_dict_path = os.path.join(model_dir, "transformer_dict.pt")
+
+    if param.Train:
+
+        #========================训练（验证）模型=====================#
+        seq2seq.train_val(train_data_loader, val_data_loader)
+        torch.save(seq2seq.transformer, model_path)
+
+    #========================保存/加载模型=====================#
+
     
     # (1) 保存和加载模型参数
     # torch.save(seq2seq.transformer.state_dict(), model_dict_path)
     # seq2seq.transformer.load_state_dict(torch.load(model_dict_path))
 
     # (2) 保存和加载整个模型
-    # torch.save(seq2seq.transformer, model_path)
     seq2seq.transformer = torch.load(model_path)
 
     #========================模型推理测试===========================#
