@@ -3,7 +3,8 @@
 
 # 待完成
 
-- [ ] transformer翻译模组--External-Attention-pytorch
+- [ ] transformer翻译模组--External-Attention-pytorch <br>
+    pip install -i https://pypi.tuna.tsinghua.edu.cn/simple fightingcv_attention
 - [ ] transformer翻译模组--trax
 - [ ] transformer预测模组
 
