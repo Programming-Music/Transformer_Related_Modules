@@ -3,6 +3,7 @@
 
 # 待完成
 
+- [ ] transformer翻译模组--External-Attention-pytorch
 - [ ] transformer翻译模组--trax
 - [ ] transformer预测模组
 
@@ -15,6 +16,7 @@
 <br>
 
 Ref.    
+** [External-Attention-pytorch](https://github.com/xmu-xiaoma666/External-Attention-pytorch) <br>
 ** [trax](https://github.com/google/trax) <br>
 ** [tensor2tensor（trax前代版本）](https://github.com/tensorflow/tensor2tensor)  <br>
 ** [Reproduce_the_Transformer_model-master项目](https://github.com/scnu-dil/Reproduce_the_Transformer_model) <br>
