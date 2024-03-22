@@ -1,6 +1,6 @@
 # Transformer_Related_Modules
 
-基于transformer的各类模型，熟悉transformer
+Various models based on transformer to start the road to advancement
 
 ## 待完成
 - [&check;] transformer翻译模组--dreamgonfly/transformer-pytorch::可训练、推理、评估
