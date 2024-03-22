@@ -4,6 +4,8 @@ Various models based on transformer to start the road to advancement
 
 ## 待完成
 - [&check;] transformer翻译模组--dreamgonfly/transformer-pytorch::可训练、推理、评估
+- [&times;] transformer翻译模组--Reproduce_the_Transformer_model-master项目::可建模评估, 修改后可推理<br>
+
 - [&nbsp;&nbsp;&nbsp;] transformer预测模组
 
 
@@ -22,7 +24,7 @@ Various models based on transformer to start the road to advancement
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pip install -i https://pypi.tuna.tsinghua.edu.cn/simple fightingcv_attention<br>
 - [&times;] transformer翻译模组--attention-is-all-you-need-pytorch::版本较陈旧，难以运行<br>
 - [&times;] transformer翻译模组--huggingface/transformer::目前发现项目文件运行需要代理<br>
-- [&times;] transformer翻译模组--Reproduce_the_Transformer_model-master项目::可建模不可推理<br>
+
 - ...<br>
 
 <br>

@@ -867,7 +867,8 @@ class Beam():
 
         # bestScoresId is flattened as a (beam x word) array, 变换 BestScoreSid beam*word词数的数组，
         # so we need to calculate which word and beam each score came from 计算每个单词和beam 搜索分数的来源
-        prev_k = best_scores_id / num_words
+        # prev_k = best_scores_id / num_words
+        prev_k = best_scores_id // num_words
         self.prev_ks.append(prev_k)
         self.next_ys.append(best_scores_id - prev_k * num_words)
 
@@ -1080,7 +1081,7 @@ class Sequence2Sequence():
                 
                 src_seq, tgt_seq = tool.batch_2_tensor(batch_dat)  # 获得输入序列和实际目标序列
                 src_pos = tool.seq_2_pos(src_seq)  # 得到输入序列的pos位置向量
-                print(f"src_seq:{src_seq}, src_pos:{src_pos}")
+                    # print(f"src_seq:{src_seq}, src_pos:{src_pos}")
                 all_pre_seq, all_pre_seq_p = infer.translate_batch(src_seq, src_pos)  # 获得所有预测的结果和对应的概率
 
                 
@@ -1095,7 +1096,7 @@ class Sequence2Sequence():
                         # seq = seq.type(torch.int32)
                         new_seq = []
                         for i in seq:
-                            i = int(i)  # 注意索引必须为非负整数
+                            # i = int(i)  # 注意索引必须为非负整数
                             if i != param.sos and i != param.eos and i != param.pad:
                                 new_seq.append(i)
                         pre_word_seq = [target_lang.index2word[idx] for idx in new_seq]

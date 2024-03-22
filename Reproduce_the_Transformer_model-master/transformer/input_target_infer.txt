@@ -1,256 +1,1024 @@
-输入序列->：two people are riding a motorcycle along with many other riders .
-->预测序列：
-==目标序列：zwei personen fahren motorrad gemeinsam mit vielen anderen motorradfahrern .
-
-输入序列->：two cars are driving on a racetrack .
-->预测序列：
-==目标序列：zwei autos fahren auf einer rennstrecke .
-
-输入序列->：woman wearing brown sandals and blue jeans , in a white shirt , holding a baby under a tall tree .
-->预测序列：
-==目标序列：eine frau in braunen sandalen , blauen jeans und einem wei en shirt halt ein baby unter einem gro en baum .
-
-输入序列->：children fight to win a tug of war battle .
-->预测序列：
-==目标序列：kinder <unk> sich , beim <unk> zu gewinnen .
-
-输入序列->：a female performer with a violin plays on a street while a woman with a blue guitar looks on .
-->预测序列：
-==目标序列：eine <unk> mit einer violine spielt auf der stra e wahrend eine frau mit einer blauen gitarre zusieht .
-
-输入序列->：a girl wearing a life vest floats in water .
-->预测序列：
-==目标序列：ein madchen in einer rettungsweste treibt im wasser .
-
-输入序列->：a basketball player in white squats while a player in red moves toward him .
-->预测序列：
-==目标序列：ein basketballspieler in wei geht in die hocke wahrend ein spieler in rot auf ihn zu lauft .
-
-输入序列->：a dog begging to a man and a woman .
-->预测序列：
-==目标序列：ein hund bettelt bei einem mann und einer frau .
-
-输入序列->：a happy woman is preparing a <unk> at a coffee shop .
-->预测序列：
-==目标序列：eine gluckliche frau bereitet in einem <unk> shop eine <unk> zu .
-
-输入序列->：a man is dancing with a dog between his legs .
-->预测序列：
-==目标序列：ein mann tanzt mit einem hund zwischen den beinen .
-
-输入序列->：a streetlight lit bridge with a cyclist and some cars .
-->预测序列：
-==目标序列：eine <unk> brucke mit einem radfahrer und ein paar autos .
-
-输入序列->：a man on a bicycle pedals through an archway .
-->预测序列：
-==目标序列：ein mann fahrt auf einem fahrrad durch einen torbogen .
-
-输入序列->：a group of people at an outdoor fruit market
-->预测序列：
-==目标序列：eine gruppe von menschen auf einem <unk> im freien .
-
-输入序列->：a dance group performs in a parade in china .
-->预测序列：
-==目标序列：eine <unk> bei einer auffuhrung wahrend einer parade in china .
-
-输入序列->：a woman is laying down on a sofa laughing .
-->预测序列：
-==目标序列：eine frau liegt auf einem sofa und lacht .
-
-输入序列->：a beige dog runs behind a white dog holding a yellow toy .
-->预测序列：
-==目标序列：ein <unk> hund lauft hinter einem wei en hund mit einem gelben spielzeug .
-
-输入序列->：two children sit side by side while eating a treat .
-->预测序列：
-==目标序列：zwei kinder sitzen nebeneinander und essen su igkeiten .
-
-输入序列->：a woman sits in a <unk> in area with a cat and two <unk> .
-->预测序列：
-==目标序列：eine frau sitzt in einem kafig mit einer katze und zwei kaninchen .
-
-输入序列->：a young boy wearing a blue jersey and yellow shorts is playing soccer .
-->预测序列：
-==目标序列：ein junge in einem blauen trikot und gelben shorts spielt fu ball .
-
-输入序列->：two guys and a girl smiling .
-->预测序列：
-==目标序列：zwei typen und ein madchen lacheln .
-
-输入序列->：two boys cross a city street while kicking a red soccer ball .
-->预测序列：
-==目标序列：zwei jungen uberqueren eine stra e in einer stadt wahrend sie mit einem roten fu ball spielen .
-
-输入序列->：many people in a street protesting the use of <unk> in power plants .
-->预测序列：
-==目标序列：viele leute protestieren auf einer stra e gegen <unk> .
-
-输入序列->：dog with black collar rolling in dirt and dried leaves
-->预测序列：
-==目标序列：hund mit schwarzem halsband <unk> sich in staub und trockenen blattern .
-
-输入序列->：a man in white pants and a blue shirt is kicking a yellow boxing bag .
-->预测序列：
-==目标序列：ein mann in wei en hosen und einem blauen hemd tritt gegen einen gelben <unk> .
-
-输入序列->：two dogs playfully bite a third dog , which has its tongue sticking out .
-->预测序列：
-==目标序列：zwei hunde bei en spielerisch einen dritten hund , dessen zunge <unk> .
-
-输入序列->：a man fixing a little girl s bicycle .
-->预测序列：
-==目标序列：ein mann repariert das fahrrad eines kleinen madchens .
-
-输入序列->：a little girl wearing a black swimming suit holding a shovel at a beach .
-->预测序列：
-==目标序列：ein kleines madchen in einem schwarzen badeanzug halt eine schaufel am strand .
-
-输入序列->：two men on opposing teams are playing soccer in a field .
-->预测序列：
-==目标序列：zwei manner aus gegnerischen mannschaften spielen fu ball auf einem fu ballplatz .
-
-输入序列->：a little girl is looking through a telescope at the beach .
-->预测序列：
-==目标序列：ein kleines madchen blickt durch ein teleskop auf den strand .
-
-输入序列->：two people are laying down and kissing on a grassy lawn .
-->预测序列：
-==目标序列：zwei personen liegen auf einem rasen und kussen sich .
-
-输入序列->：one dog leaps to catch a softball while another looks on .
-->预测序列：
-==目标序列：ein hund springt um einen ball zu fangen , wahrend ein anderer zusieht .
-
-输入序列->：two people in blue shirts are outside with a <unk> .
-->预测序列：
-==目标序列：zwei personen in blauen hemden stehen mit einem <unk> im freien .
-
-输入序列->：a dog drinks water outside on the grass .
-->预测序列：
-==目标序列：ein hund trinkt drau en wasser auf dem gras .
-
-输入序列->：an overweight woman with long black hair in a pink shirt with a name tag is applying lipstick .
-->预测序列：
-==目标序列：eine <unk> frau mit langen schwarzen haaren in einem rosa shirt mit namensschild tragt lippenstift auf .
-
-输入序列->：a boy wearing a red shirt digs into the sand with a yellow shovel .
-->预测序列：
-==目标序列：ein junge in einem roten shirt grabt mit einer gelben schaufel im sand .
+输入序列->：a man that appears to be running in a marathon gives us thumbs up .
+->预测序列：ein mann in einem marathonlauf scheint die <unk> zu laufen .
+==目标序列：ein mann , der anscheinend bei einem marathon <unk> , zeigt zwei daumen nach oben .
 
 输入序列->：a man wearing black and white stripes is trying to stop a horse .
-->预测序列：
+->预测序列：ein mann in schwarz wei en <unk> versucht ein pferd zu <unk> .
 ==目标序列：ein mann in schwarz wei gestreifter kleidung versucht , ein pferd <unk> .
 
-输入序列->：a boy riding a skateboard on a skateboarding ramp
-->预测序列：
-==目标序列：ein junge fahrt skateboard auf einer skateboardrampe .
+输入序列->：a child is splashing in the water
+->预测序列：ein kind planscht im wasser .
+==目标序列：ein kind planscht im wasser .
 
-输入序列->：a mother <unk> her two young boys to fish off of a rocky coast into very blue water .
-->预测序列：
-==目标序列：eine mutter bringt ihren zwei kleinen <unk> an einer felsigen kuste mit sehr blauem wasser das angeln bei .
+输入序列->：a woman and two men , that are dressed professionally , are having a discussion .
+->预测序列：eine frau und zwei manner , die als <unk> gekleidet sind , diskutieren miteinander essen .
+==目标序列：eine frau diskutiert mit zwei <unk> gekleideten mannern .
+
+输入序列->：police officer watching woman exit from bus .
+->预测序列：<unk> betrachten eine alte frau , die von einem bus <unk> .
+==目标序列：zwei polizisten beobachten eine frau beim <unk> aus dem bus .
+
+输入序列->：a man in a black shirt sitting at a table with an open apple laptop in front of him .
+->预测序列：ein mann in schwarzem t shirt sitzt mit einem offenen laptop an einem tisch vor sich .
+==目标序列：ein mann in einem schwarzen shirt sitzt mit einem offenen apple laptop vor sich an einem tisch .
+
+输入序列->：dirt biker makes a sloping turn in a forest during the fall .
+->预测序列：eine person fahrt im herbst eine szene mit einem wald durch den wald .
+==目标序列：ein <unk> biker fahrt im herbst durch eine steile kurve .
+
+输入序列->：people walking down the street with a street vendor .
+->预测序列：leute gehen bei einem stra <unk> mit einem stra enhandler entlang .
+==目标序列：menschen gehen auf einer stra e mit einem stra enhandler .
+
+输入序列->：a baby in a christmas outfit looks at the camera .
+->预测序列：ein baby in einem <unk> outfit schaut in die kamera .
+==目标序列：ein baby im <unk> blickt in die kamera .
+
+输入序列->：a young brunette woman eating and drinking something .
+->预测序列：eine junge brunette und trinkt etwas und trinkt etwas .
+==目标序列：eine junge brunette frau isst und trinkt etwas .
+
+输入序列->：the red car is ahead of the two cars in the background .
+->预测序列：das red auto ist vor der autos im hintergrund .
+==目标序列：das rote auto fahrt vor den beiden autos im hintergrund .
+
+输入序列->：the man with the cane is on a walk .
+->预测序列：der mann mit dem stock ist auf einem <unk> .
+==目标序列：der mann mit dem spazierstock macht einen spaziergang .
+
+输入序列->：a man doing a trick on skateboard
+->预测序列：ein mann macht ein kunststuck auf einem skateboard .
+==目标序列：ein mann macht einen trick auf dem skateboard
+
+输入序列->：two people sitting under a tree picking a green vegetable .
+->预测序列：zwei personen sitzen unter einem baum um eine grune <unk> .
+==目标序列：zwei personen sitzen unter einem baum und <unk> grunes gemuse .
+
+输入序列->：a young girl shows her friends how to use a <unk> camera .
+->预测序列：ein junges madchen zeigt ihre freunde , wie man eine <unk> kamera benutzen .
+==目标序列：ein junges madchen zeigt seiner freundin , wie man eine <unk> verwendet .
+
+输入序列->：a group of people at an outdoor fruit market
+->预测序列：eine gruppe von menschen befindet sich auf einem markt im freien .
+==目标序列：eine gruppe von menschen auf einem <unk> im freien .
+
+输入序列->：parked cars with a school bus behind them .
+->预测序列：hinter einem <unk> bus .
+==目标序列：<unk> autos mit einem schulbus dahinter .
+
+输入序列->：busy asian mall with paper lanterns and shoppers .
+->预测序列：<unk> asiatische arbeiter mit <unk> und einkaufer .
+==目标序列：<unk> asiatisches einkaufszentrum mit <unk> und einkaufern .
+
+输入序列->：a man next to a bicycle is playing a pan flute .
+->预测序列：ein mann neben einem fahrrad spielt eine pfanne .
+==目标序列：ein mann spielt neben einem fahrrad <unk> .
+
+输入序列->：a professionally dressed woman standing at a podium <unk> or discussing something of <unk> .
+->预测序列：eine <unk> gekleidete frau steht an einem podium und diskutiert etwas mit der aufschrift <unk> <unk> .
+==目标序列：eine <unk> gekleidete frau steht an einem podium und <unk> oder diskutiert uber etwas <unk> .
+
+输入序列->：a black man and his two white friends are putting their heads close together .
+->预测序列：ein dunkelhautiger mann und seine beiden wei en arbeiten zusammen , legen ihre kopfe in der nahe zusammen .
+==目标序列：ein schwarzer mann und seine zwei wei en freunde stecken die kopfe zusammen .
+
+输入序列->：a woman sitting next to her purse watching dogs at the park .
+->预测序列：eine frau sitzt neben ihrer geldborse und schaut auf die geldborse im park .
+==目标序列：eine frau sitzt neben ihrer tasche und sieht hunden im park zu .
+
+输入序列->：crowds of people are all riding bicycles .
+->预测序列：<unk> <unk> fahren auf fahrradern .
+==目标序列：<unk> , die alle fahrrad fahren .
+
+输入序列->：a woman sits in a <unk> in area with a cat and two <unk> .
+->预测序列：eine frau sitzt in einem <unk> mit einer katze und zwei <unk> .
+==目标序列：eine frau sitzt in einem kafig mit einer katze und zwei kaninchen .
+
+输入序列->：four white dogs with muzzles jump over a red wall .
+->预测序列：vier wei e hunde mit maulkorben springen uber eine rote wand .
+==目标序列：vier wei e hunde mit maulkorben springen uber eine rote mauer .
+
+输入序列->：an asian man wearing gloves is working at a food stall .
+->预测序列：ein asiatischer mann mit handschuhen arbeitet am essensstand .
+==目标序列：ein asiatischer mann mit handschuhen arbeitet an einem <unk> .
+
+输入序列->：dog with black collar rolling in dirt and dried leaves
+->预测序列：ein hund mit einem schwarzen halsband , der auf einem feldweg sitzt und blatter .
+==目标序列：hund mit schwarzem halsband <unk> sich in staub und trockenen blattern .
+
+输入序列->：a man on his wedding day .
+->预测序列：ein mann an seinem <unk> .
+==目标序列：ein mann an seinem <unk> .
+
+输入序列->：a red haired man with dreadlocks is sitting playing and acoustic guitar .
+->预测序列：ein rothaariger mann mit dreadlocks sitzt und spielt auf einer akustikgitarre .
+==目标序列：ein rothaariger mann mit dreadlocks sitzt und spielt auf einer <unk> gitarre .
+
+输入序列->：a girl in a sweater is blocking the <unk> <unk> .
+->预测序列：ein madchen im pullover greift nach der <unk> .
+==目标序列：ein madchen in einem sweatshirt verdeckt die sonne .
+
+输入序列->：some plants are <unk> near the window .
+->预测序列：ein paar pflanzen <unk> in der nahe des <unk> .
+==目标序列：ein paar pflanzen wachsen beim fenster .
+
+输入序列->：a small child wearing a blue and white t shirt happily holding a yellow plastic <unk> .
+->预测序列：ein kleines kind in einem blau wei en t shirt halt eine gelbe <unk> .
+==目标序列：ein kleines kind in einem blau wei en t shirt halt glucklich einen gelben plastik <unk> .
+
+输入序列->：a red haired young man drinks from a water fountain shaped like a woman .
+->预测序列：ein rothaariger junger mann trinkt aus einem <unk> mit einer frau , die wie eine frau trinkt .
+==目标序列：ein rothaariger junger mann trinkt aus einem springbrunnen , der wie eine frau <unk> ist .
+
+输入序列->：two men are crafting items in a workshop with tools .
+->预测序列：zwei manner fullen in einer werkstatt mit werkzeugen .
+==目标序列：zwei manner stellen in einer werkstatt mit werkzeugen gegenstande her .
+
+输入序列->：a boy in midair trying to kick a soccer ball
+->预测序列：ein junge fliegt bei einem fu ballspiel in die luft .
+==目标序列：ein junge ist in der luft und versucht einen fu ball zu treffen
+
+输入序列->：a gloved hand holds what appears to be an <unk> nail against a log .
+->预测序列：eine hand halt eine <unk> , die wie ein <unk> <unk> aussieht , an einen <unk> <unk> .
+==目标序列：eine hand mit handschuh halt einen ubergro en nagel gegen einen <unk> .
+
+输入序列->：a man standing on a city street .
+->预测序列：ein mann steht auf einer stadtstra e .
+==目标序列：ein mann steht auf einer stra e in der stadt .
+
+输入序列->：an old man on a subway wearing heavy layered clothing is reading a newspaper .
+->预测序列：ein alter mann in <unk> kleidung tragt schwere kleidung und liest zeitung .
+==目标序列：ein alter mann in dicker kleidung sitzt in der u bahn und liest eine zeitung .
+
+输入序列->：a dog begging to a man and a woman .
+->预测序列：ein hund <unk> , um einen mann und eine frau zu machen .
+==目标序列：ein hund bettelt bei einem mann und einer frau .
+
+输入序列->：a girl wearing a mask rides on a man s shoulders through a crowded sidewalk .
+->预测序列：ein madchen mit einer maske fahrt auf den schultern uber den schultern eines mannes .
+==目标序列：ein madchen mit einer maske reitet auf den schultern eines mannes durch eine menschenmenge .
+
+输入序列->：people are riding bicycles in the street , and they are all wearing helmets .
+->预测序列：menschen fahren auf der stra e fahrrad , beide tragen helme .
+==目标序列：radfahrer auf der stra e , alle tragen helme .
 
 输入序列->：a woman does a <unk> on a trampoline on the beach .
-->预测序列：
+->预测序列：eine frau macht an einem trampolin einen <unk> . am strand .
 ==目标序列：eine frau macht einen salto auf einem trampolin am strand .
 
-输入序列->：a young man skateboards off a pink railing .
-->预测序列：
-==目标序列：ein junger mann rutscht mit dem skateboard uber ein rosa gelander .
-
-输入序列->：people on laptops in front <unk> a large window .
-->预测序列：
-==目标序列：leute mit laptops vor einem gro en fenster .
-
-输入序列->：a man with sunglasses is operating a construction automobile and <unk> gravel on to the ground .
-->预测序列：
-==目标序列：ein mann mit sonnenbrille bedient ein <unk> und ladt kies auf den boden ab .
-
-输入序列->：blond girls are sitting on a ledge in a crowded plaza .
-->预测序列：
-==目标序列：blonde madchen sitzen auf einem sims auf einem belebten platz .
-
-输入序列->：a brunette child with glasses holding a blond child wearing a red sweater and yellow boots .
-->预测序列：
-==目标序列：ein brunettes kind mit brille halt ein blondes kind in einem roten sweatshirt und gelben stiefeln .
-
-输入序列->：two young boys pose with a puppy for a family picture .
-->预测序列：
-==目标序列：zwei kleine jungen posieren mit einem welpen fur eine <unk> .
-
-输入序列->：two people wearing hats are standing in a field tending to a <unk> .
-->预测序列：
-==目标序列：zwei personen mit huten stehen auf einem feld und <unk> eine <unk> .
-
-输入序列->：a tattooed man pouring beer out of a bottle into a young man s mouth .
-->预测序列：
-==目标序列：ein tatowierter mann gie t bier aus einer flasche in den mund eines jungen mannes .
-
-输入序列->：four females of asian descent are wearing golden dresses while performing point ballet .
-->预测序列：
-==目标序列：vier frauen asiatischer herkunft tragen <unk> kleider und tanzen ballett .
-
-输入序列->：an african american boy wearing blue shorts , a black and red shirt , and white sneakers , is playing tennis .
-->预测序列：
-==目标序列：ein afroamerikanischer junge in blauen shorts , einem schwarz roten shirt und wei en turnschuhen spielt tennis .
-
-输入序列->：a man in a gray shirt jumps over the top of a sand dune in the desert .
-->预测序列：
-==目标序列：ein mann in einem grauen shirt springt uber die spitze einer sanddune in der wuste .
-
-输入序列->：a dog runs outside with a yellow toy .
-->预测序列：
-==目标序列：ein hund lauft mit einem gelben spielzeug ins <unk> .
-
-输入序列->：two small dogs follow a larger dog with a tennis ball
-->预测序列：
-==目标序列：zwei kleine hunde folgen einem gro eren hund mit einem tennisball
-
-输入序列->：an oriental person in a red shirt and black pants crouching over a purse on concrete .
-->预测序列：
-==目标序列：eine person orientalischen <unk> in einem roten hemd und schwarzer hose kniet uber einer handtasche auf dem beton .
-
-输入序列->：a man wearing a striped shirt is smoking a cigarette on the street
-->预测序列：
-==目标序列：ein mann in einem gestreiften shirt raucht auf der stra e eine zigarette .
-
-输入序列->：two workers <unk> the bars of a fence near a busy suburban street .
-->预测序列：
-==目标序列：zwei arbeiter <unk> en die stangen eines zauns an einer viel befahrenen <unk> e .
-
-输入序列->：on horseback a man attempts to rope a young bull .
-->预测序列：
-==目标序列：ein mann versucht , einen stier von einem pferd aus mit dem seil zu fangen .
-
-输入序列->：two people are <unk> good time in their boat .
-->预测序列：
-==目标序列：zwei personen haben eine gute zeit auf ihrem boot .
-
-输入序列->：this is a large group of people sitting outside on benches .
-->预测序列：
-==目标序列：das ist eine gro e menschengruppe , die im freien auf banken sitzt .
-
-输入序列->：there is a band on stage with band members wearing <unk> of blue .
-->预测序列：
-==目标序列：eine band mit <unk> in blau gekleideten bandmitgliedern steht auf der buhne .
-
 输入序列->：a young girl with curly blond hair and wearing a white top lies in the grass , holding a flower <unk> .
-->预测序列：
+->预测序列：ein kleines madchen mit lockigen blonden haaren und einem wei en oberteil liegt im gras und halt eine blume .
 ==目标序列：ein junges madchen mit <unk> blonden haaren in einem wei en top liegt im gras und halt einen <unk> .
 
-输入序列->：a girl with <unk> and <unk> safety gear rollerblades .
-->预测序列：
-==目标序列：ein madchen mit <unk> und <unk> schutzausrustung fahrt rollerblades .
+输入序列->：a child wearing a red coat and cap is holding a large chunk of snow .
+->预测序列：ein kind mit einem roten mantel und einer mutze halt ein gro es <unk> .
+==目标序列：ein kind in einem roten mantel und einer mutze halt einen gro en haufen schnee .
 
-输入序列->：a young boy , wearing a chef s hat and apron , is cutting sausages in a kitchen .
-->预测序列：
-==目标序列：ein kleiner junge mit <unk> und schurze schneidet in einer kuche <unk> .
+输入序列->：two boys are playing on the sidewalk .
+->预测序列：zwei jungen spielen auf dem gehweg .
+==目标序列：zwei jungen spielen auf dem gehsteig .
+
+输入序列->：an elderly man sitting in a chair , eating some snacks .
+->预测序列：ein alterer mann sitzt auf einem stuhl und isst etwas .
+==目标序列：ein alterer mann sitzt in einem stuhl und isst ein paar snacks .
+
+输入序列->：a child <unk> while riding on a woman s shoulders .
+->预测序列：ein kind <unk> im <unk> auf den schultern einer frau .
+==目标序列：ein kind sitzt auf den schultern einer frau und klatscht .
+
+输入序列->：three construction workers are <unk> pavement .
+->预测序列：drei bauarbeiter machen <unk> . .
+==目标序列：drei arbeiter machen <unk> auf dem gehsteig .
+
+输入序列->：the girl is taking a drink from a water fountain .
+->预测序列：das madchen trinkt aus einem springbrunnen aus .
+==目标序列：das madchen trinkt aus einem springbrunnen .
+
+输入序列->：two brown dogs playing in a rough <unk> .
+->预测序列：zwei braune hunde spielen in einem <unk> <unk> .
+==目标序列：zwei braune hunde spielen <unk> miteinander .
+
+输入序列->：an elderly man in a light blue coat works on a car on the roadside .
+->预测序列：ein alterer mann in <unk> mantel arbeitet an einem auto auf der stra e .
+==目标序列：ein alterer mann in einem hellblauen mantel arbeitet an der stra enseite an einem auto .
+
+输入序列->：a man with work clothes on standing on the back of a truck .
+->预测序列：ein mann mit arbeitskleidung steht auf hinten auf einem lkw .
+==目标序列：ein mann in arbeitskleidung steht auf der ladeflache seines lasters .
+
+输入序列->：a little girl is looking through a telescope at the beach .
+->预测序列：ein kleines madchen blickt durch ein teleskop den sand am strand .
+==目标序列：ein kleines madchen blickt durch ein teleskop auf den strand .
+
+输入序列->：a team in white and gold on the sidelines of a football field .
+->预测序列：ein team in wei und gold auf der seitenlinie eines football .
+==目标序列：ein team in wei und gold an der seitenlinie eines <unk> .
+
+输入序列->：two dogs playfully bite a third dog , which has its tongue sticking out .
+->预测序列：zwei hunde kampfen bei einem dritten , der seine zunge <unk> ist , <unk> die zunge heraus .
+==目标序列：zwei hunde bei en spielerisch einen dritten hund , dessen zunge <unk> .
+
+输入序列->：a brown dog walks in the grass with its tongue hanging out .
+->预测序列：ein brauner hund lauft mit heraushangender zunge durch das gras .
+==目标序列：ein brauner hund lauft durchs gras und seine zunge hangt heraus .
+
+输入序列->：a brown dog jumping over a hurdle .
+->预测序列：ein brauner hund springt uber eine hurde .
+==目标序列：ein brauner hund springt uber eine hurde .
+
+输入序列->：three dogs play with each other out in the field .
+->预测序列：drei hunde spielen miteinander auf dem feld .
+==目标序列：drei hunde spielen auf einem feld .
+
+输入序列->：a youth with a black shirt that says asian <unk> plays a drum while sitting .
+->预测序列：ein junger mann in einem schwarzen hemd mit der aufschrift <unk> <unk> spielt trommel .
+==目标序列：ein jugendlicher in einem schwarzen t shirt mit dem aufdruck <unk> <unk> sitzt und spielt eine trommel .
+
+输入序列->：a child sitting at a restaurant table holding a paper mask against his face .
+->预测序列：ein kind sitzt in einem restaurant und halt eine zeitung vor sein gesicht .
+==目标序列：ein kind sitzt an einem restauranttisch und halt eine <unk> <unk> gesicht .
+
+输入序列->：a woman in a pink skirt is holding a baby .
+->预测序列：eine frau in einem rosafarbenen rock halt ein baby .
+==目标序列：eine frau in einem rosa kleid halt ein baby .
+
+输入序列->：a bald man walking down a city sidewalk while talking on his cellphone .
+->预测序列：ein glatzkopfiger mann geht auf dem gehweg und telefoniert mit seinem handy .
+==目标序列：ein glatzkopfiger mann geht auf einem gehsteig und telefoniert mit seinem handy .
+
+输入序列->：three men in red and white striped shirts , white pants , and black hats hold flags .
+->预测序列：drei manner in rot wei gestreiften hemden , wei en hosen , wei en hosen und schwarzen huten halten flaggen .
+==目标序列：drei manner in rot und wei gestreiften shirts , wei en hosen und mit schwarzen huten halten flaggen .
+
+输入序列->：boy in sunglasses is running behind a fair .
+->预测序列：ein junge mit sonnenbrille rennt hinter einem jahrmarkt .
+==目标序列：ein junge mit sonnenbrille lauft hinter einem <unk> .
+
+输入序列->：man carrying a few <unk> of beer .
+->预测序列：ein mann tragt einige <unk> bier .
+==目标序列：ein mann mit ein paar kisten bier .
+
+输入序列->：a small child in a blue outfit is looking off at some trees in the distance .
+->预测序列：ein kleines kind in einem blauen outfit schaut auf einige baumen in der ferne .
+==目标序列：ein kleines kind in blau sieht zu baumen , die in der ferne stehen .
+
+输入序列->：a man in a red shirt is about to eat a <unk> .
+->预测序列：ein mann in einem roten hemd ist kurz davor , einen <unk> zu essen .
+==目标序列：ein mann in einem roten hemd <unk> sich an , einen <unk> zu essen .
+
+输入序列->：a group of men standing on a field of black balls .
+->预测序列：eine gruppe von mannern steht auf einem feld mit schwarzen ballen .
+==目标序列：eine gruppe von mannern steht aus einem feld aus schwarzen ballen .
+
+输入序列->：the two kids are playing at the playground .
+->预测序列：die zwei kinder spielen im spielplatz .
+==目标序列：die zwei kinder spielen auf dem spielplatz .
+
+输入序列->：a man is standing by a group of video games in a bar .
+->预测序列：ein mann steht neben einer gruppe von <unk> in einer bar . .
+==目标序列：ein mann steht bei einigen <unk> in einer bar .
+
+输入序列->：four children practice karate while two adults watch .
+->预测序列：vier kinder uben <unk> , wahrend zwei erwachsene zuschauen .
+==目标序列：vier kinder uben karate wahrend zwei erwachsene zusehen .
+
+输入序列->：bicyclist in racing gear rides through forest area .
+->预测序列：ein radfahrer fahrt durch einen wald .
+==目标序列：radfahrer in <unk> fahrt durch ein waldgebiet .
+
+输入序列->：multiple people in a park eating at a picnic table
+->预测序列：mehrere menschen essen in einem park an einem picknicktisch .
+==目标序列：mehrere menschen essen an einem picknicktisch im park .
+
+输入序列->：these people are climbing the steps to go the mountain
+->预测序列：diese personen gehen die stufen zu einem berg hinauf .
+==目标序列：diese personen klettern die stufen zum berg hoch
+
+输入序列->：two men on opposing teams are playing soccer in a field .
+->预测序列：zwei manner in gegnerischen mannschaften spielen fu ball auf einem feld .
+==目标序列：zwei manner aus gegnerischen mannschaften spielen fu ball auf einem fu ballplatz .
+
+输入序列->：a man is sitting in a barber s chair getting ready for a shave .
+->预测序列：ein mann sitzt in einem <unk> und bereitet sich auf einen <unk> vor .
+==目标序列：ein mann sitzt im <unk> und bereitet sich auf eine <unk> vor .
+
+输入序列->：a man <unk> on an artwork perched on a cart .
+->预测序列：ein mann <unk> an einem <unk> aus metall .
+==目标序列：ein mann <unk> uber einem gemalde auf einem wagen .
+
+输入序列->：a boy with blue and yellow rain boots runs on dirt .
+->预测序列：ein junge mit blau gelben <unk> lauft auf einer erde .
+==目标序列：ein junge in blau gelben <unk> lauft im schlamm .
+
+输入序列->：the woman in the brown shirt is sitting on a bright red bench .
+->预测序列：die frau im braunen hemd sitzt auf einer hellgrunen roten bank .
+==目标序列：die frau im braunen shirt sitzt auf einer hellroten bank .
+
+输入序列->：three guys smiling for camera and showing off their <unk> .
+->预测序列：drei manner lacheln und zeigen ihre <unk> um die kamera .
+==目标序列：drei manner lacheln fur die kamera und zeigen ihre <unk> .
+
+输入序列->：two people wearing odd <unk> like costumes , one blue and one purple , are standing in a road .
+->预测序列：zwei personen in <unk> <unk> kostumen , von denen eine blaue und lila kleidung tragt , stehen auf einer stra e .
+==目标序列：zwei leute in <unk> <unk> , eines blau und eines <unk> , stehen auf einer stra e .
+
+输入序列->：a guy and a girl going down a <unk> walkway .
+->预测序列：ein mann und ein madchen gehen den <unk> hinunter .
+==目标序列：ein typ und ein madchen gehen einen <unk> fu weg hinunter .
+
+输入序列->：a girl sits on a decorated bike with a younger boy while another girl takes a picture .
+->预测序列：ein madchen sitzt auf einem dekorierten rad , wahrend ein jungeres madchen ein foto macht .
+==目标序列：ein madchen sitzt mit einem kleineren jungen auf einem dekorierten fahrrad wahrend ein <unk> madchen ein foto macht .
+
+输入序列->：two construction workers are laying sheet metal across beams .
+->预测序列：zwei bauarbeiter liegen <unk> uber <unk> .
+==目标序列：zwei bauarbeiter legen <unk> uber balken .
+
+输入序列->：a man with a balloon hat makes balloon animals .
+->预测序列：ein mann mit einem aufgeblasenen hut macht <unk> .
+==目标序列：ein mann mit einem luftballon , der <unk> macht .
+
+输入序列->：a large group of people fill a street .
+->预测序列：eine gro e menschenmenge uberquert eine stra e .
+==目标序列：eine gro e menschenmenge <unk> eine stra e .
+
+输入序列->：two german <unk> <unk> at each other .
+->预测序列：zwei deutsche <unk> sich gegenseitig an .
+==目标序列：zwei deutsche <unk> <unk> einander an .
+
+输入序列->：a woman sitting on a very large rock smiling at the camera with trees in the background .
+->预测序列：eine frau sitzt auf einem sehr gro en felsen und lachelt vor baumen im hintergrund .
+==目标序列：eine frau sitzt vor baumen im hintergrund auf einem sehr gro en felsen und lachelt in die kamera .
+
+输入序列->：small orchestra playing with open violin case in front
+->预测序列：kleine orchester spielen mit offenem armen vor publikum .
+==目标序列：kleines orchester spielt im freien mit einem <unk> auf dem boden .
+
+输入序列->：a runner <unk> for <unk> while being <unk> down by two <unk> .
+->预测序列：ein laufer <unk> sich fur die <unk> von zwei <unk> um .
+==目标序列：ein <unk> versucht , <unk> <unk> zu machen wahrend er von zwei <unk> zu boden <unk> wird .
+
+输入序列->：a bride and groom kiss under the bride s <unk> .
+->预测序列：ein braut und ein brautigam kussen sich unter der <unk> des <unk> .
+==目标序列：eine braut und brautigam kussen sich unter dem <unk> .
+
+输入序列->：two guys and a girl smiling .
+->预测序列：zwei manner und ein madchen lacheln .
+==目标序列：zwei typen und ein madchen lacheln .
+
+输入序列->：four people are playing soccer on a beach .
+->预测序列：vier personen spielen am strand fu ball .
+==目标序列：vier personen spielen fu ball auf einem strand .
+
+输入序列->：blond girls are sitting on a ledge in a crowded plaza .
+->预测序列：blonde madchen sitzen auf einem sims auf einem uberfullten platz .
+==目标序列：blonde madchen sitzen auf einem sims auf einem belebten platz .
+
+输入序列->：a choir group is gathered together in a church .
+->预测序列：eine <unk> hat sich in einer kirche zusammen .
+==目标序列：ein chor versammelt sich in einer kirche .
+
+输入序列->：a boy grabs his leg as he jumps in the air .
+->预测序列：ein junge greift nach seinem bein aus dem bein in die luft .
+==目标序列：ein junge greift sich ans bein wahrend er in die luft springt .
+
+输入序列->：there is a man in an orange shirt playing tennis .
+->预测序列：ein mann in einem orangefarbenen hemd spielt tennis .
+==目标序列：ein mann in einem orangefarbenen shirt spielt tennis .
+
+输入序列->：a man is grilling out in his backyard .
+->预测序列：ein mann grillt im hinterhof .
+==目标序列：ein mann grillt im freien in seinem hinterhof .
+
+输入序列->：a tennis player in a green striped shirt is holding his hand up to his mouth .
+->预测序列：ein tennisspieler in einem grun gestreiften oberteil halt die hand an den mund .
+==目标序列：ein tennisspieler in einer grun gestreiften shirt halt seine hand vor den mund .
+
+输入序列->：a man is carrying a large load of metal beams on his shoulder through a <unk> .
+->预测序列：ein mann tragt eine gro e <unk> metall auf seiner schulter durch eine <unk> .
+==目标序列：ein mann tragt eine gro e ladung von <unk> auf seiner schulter durch ein <unk> .
+
+输入序列->：a <unk> with his shirt off sings into a microphone while he plays the drums .
+->预测序列：ein <unk> in einem hemd singt , wahrend er die trommel in ein mikrofon spielt .
+==目标序列：ein <unk> mit freiem oberkorper singt in ein mikrofon wahrend er schlagzeug spielt .
+
+输入序列->：a man in a uniform walking on a street with two cars and a tree .
+->预测序列：ein mann in uniform geht auf einer stra e mit zwei autos und einem baum .
+==目标序列：ein uniformierter mann geht auf einer stra e mit zwei autos und einem baum .
+
+输入序列->：a man dressed in black leather and a cowboy hat is walking around a renaissance festival .
+->预测序列：ein mann in schwarzen <unk> und cowboyhut lauft bei einem <unk> herum .
+==目标序列：ein mann in schwarzem <unk> und einem cowboyhut schlendert auf einem <unk> .
+
+输入序列->：a man is standing in a boat holding some <unk> .
+->预测序列：ein mann steht in einem boot und halt einige <unk> .
+==目标序列：ein mann steht in einem boot und <unk> netze .
+
+输入序列->：two men , one in black and white and one in red , are playing beach volleyball .
+->预测序列：zwei manner , einer in schwarz und wei , spielen beachvolleyball .
+==目标序列：zwei manner , einer in schwarz und wei und einer in rot , spielen beachvolleyball .
+
+输入序列->：a man wearing gloves carries corn through a field .
+->预测序列：ein mann mit handschuhen tragt <unk> durch ein feld .
+==目标序列：ein mann mit handschuhen tragt mais durch ein feld .
+
+输入序列->：the boy is <unk> on the lake .
+->预测序列：der junge <unk> auf dem see .
+==目标序列：ein junge beim <unk> auf dem see .
+
+输入序列->：a girl <unk> across the river , from rock to rock .
+->预测序列：ein madchen sturzt durch den fluss , von einem stein zu stein .
+==目标序列：ein madchen springt von fels zu fels uber den bach .
+
+输入序列->：a woman with a push to talk cellphone and headset waiting at a crosswalk .
+->预测序列：eine frau mit einem <unk> telefoniert am handy und <unk> <unk> .
+==目标序列：eine frau mit einem <unk> <unk> <unk> mobiltelefon und einem <unk> wartet an einem zebrastreifen .
+
+输入序列->：an african american man surrounded by empty overturned white buckets and dark colored crates <unk> himself through a message <unk> on cardboard .
+->预测序列：ein afroamerikaner ist von einem leeren wei en eimern , mit dunkler <unk> <unk> und dunklen <unk> durch eine <unk> , die vor einem backsteingebaude <unk> .
+==目标序列：ein afroamerikanischer mann ist umgeben von umgedrehten wei en eimern und <unk> kisten und druckt sich uber eine <unk> <unk> auf einem stuck karton aus .
+
+输入序列->：a child wearing a yellow shirt is jumping up and down .
+->预测序列：ein kind in gelbem hemd springt hoch und hinunter .
+==目标序列：ein kind in einem gelben shirt springt <unk> und runter .
+
+输入序列->：two indian men participating in a ceremony .
+->预测序列：zwei indische manner nehmen an einer zeremonie teil .
+==目标序列：zwei indische manner nehmen an einer zeremonie teil .
+
+输入序列->：a young woman with a purple cloth hiding her face relaxes on a wooden deck .
+->预测序列：eine junge frau mit violettem tuch <unk> sich mit einem gesicht auf einer <unk> .
+==目标序列：eine junge frau mit einem <unk> tuch uber dem gesicht entspannt auf einem holzernen deck .
+
+输入序列->：a black dog runs on green grass with a toy in his mouth .
+->预测序列：ein schwarzer hund rennt mit einem spielzeug im maul auf grunem gras .
+==目标序列：ein schwarzer hund lauft auf grunem gras mit einem spielzeug im maul .
+
+输入序列->：two men dressed in dark orange <unk> and sandals stand near a large reflective sculpture .
+->预测序列：zwei manner in dunklen orangefarbenen <unk> und sandalen stehen in der nahe einer gro en <unk> .
+==目标序列：zwei manner in <unk> decken und sandalen stehen neben einer gro en , reflektierenden skulptur .
+
+输入序列->：a woman reads a book while sitting in a row of red chairs .
+->预测序列：eine frau sitzt auf einer reihe und liest ein buch .
+==目标序列：eine frau sitzt in einer reihe aus roten stuhlen und liest ein buch .
+
+输入序列->：a beige dog runs behind a white dog holding a yellow toy .
+->预测序列：ein beige hund rennt hinter einem wei en hund , der ein gelbes spielzeug halt .
+==目标序列：ein <unk> hund lauft hinter einem wei en hund mit einem gelben spielzeug .
+
+输入序列->：military <unk> are marching through new york on a rainy day .
+->预测序列：<unk> <unk> durch eine neue <unk> an einem regnerischen tag .
+==目标序列：militarangehorige marschieren an einem regnerischen tag durch new york .
+
+输入序列->：the group of people are all covered by umbrellas .
+->预测序列：die gruppe von menschen sind alle von <unk> bedeckt .
+==目标序列：alle personen in der gruppe sind von regenschirmen bedeckt .
+
+输入序列->：a woman with pink hair dressed in black talks to a man .
+->预测序列：eine frau mit schwarzen haaren und redet mit einem mann .
+==目标序列：eine schwarz gekleidete frau mit rosa haaren spricht mit einem mann .
+
+输入序列->：a little girl with blond hair is playing and splashing in a mud puddle .
+->预测序列：ein kleines blondes madchen spielt und planscht in einer schlammpfutze .
+==目标序列：ein kleines madchen mit blonden haaren spielt und spritzt in einer schlammpfutze .
+
+输入序列->：a group of children sit on a blue mat while they eat out of bowls .
+->预测序列：eine gruppe kinder sitzt auf einer blauen matte und essen aus <unk> .
+==目标序列：ein gruppe kinder sitzt auf einer blauen matte und isst aus <unk> .
+
+输入序列->：a group of men using logs to push a boat out of the water .
+->预测序列：eine gruppe von mannern schiebt holz , um einen boot aus dem wasser <unk> .
+==目标序列：eine gruppe von mannern verwendet <unk> , um ein boot aus dem wasser zu schieben .
+
+输入序列->：the gentleman is <unk> the image that the woman in the blue shirt is <unk> him .
+->预测序列：der herr <unk> die bild an , die die frau im blauen hemd <unk> ist .
+==目标序列：der herr <unk> das bild , das ihm die frau im blauen hemd zeigt .
+
+输入序列->：a small boy wearing baseball <unk> holds a bat behind his head with a baseball mounted in front of him .
+->预测序列：ein kleiner junge in baseballkleidung halt einen schlager hinter seinem kopf <unk> , vor ihm ist ein baseball zu sehen .
+==目标序列：ein kleiner junge in <unk> holt mit einem schlager hinter seinem kopf in richtung eines vor ihm <unk> <unk> aus .
+
+输入序列->：a man with a hat is playing the drum in the street .
+->预测序列：ein mann mit hut spielt auf der stra e schlagzeug .
+==目标序列：ein mann in mit hut spielt auf der stra e schlagzeug .
+
+输入序列->：kids are sitting on a man in a banana suit .
+->预测序列：kinder sitzen auf einem mann im anzug .
+==目标序列：kinder sitzen auf einem mann in einem <unk> .
+
+输入序列->：a shirtless man in shorts is fishing while standing on some rocks .
+->预测序列：ein mann mit freiem oberkorper und shorts , der auf felsen steht .
+==目标序列：ein mann mit freiem oberkorper und shorts steht auf ein paar felsen und angelt .
+
+输入序列->：a long haired , male musician is playing on a piano .
+->预测序列：eine langhaarige mann spielt auf einem klavier .
+==目标序列：ein musiker mit langen haaren spielt klavier .
+
+输入序列->：a man rides a kicking bull in a <unk> .
+->预测序列：ein mann fahrt einen stier in einem <unk> .
+==目标序列：ein mann reitet auf einem bullen in einem <unk> .
+
+输入序列->：two people standing next to a tree on the ground .
+->预测序列：zwei menschen stehen neben einem baum auf dem boden .
+==目标序列：zwei personen stehen neben einem baum .
+
+输入序列->：a man is selling snacks at a sporting event .
+->预测序列：ein mann verkauft bei einer sportveranstaltung eine <unk> .
+==目标序列：ein mann verkauft snacks bei einer sportveranstaltung .
+
+输入序列->：a woman wearing a sweater is reading a book in her home .
+->预测序列：eine frau , die einen pullover tragt , liest in ihrem haus ein buch .
+==目标序列：eine frau in einem sweatshirt liest zu hause ein buch .
+
+输入序列->：men play soccer on a muddy field .
+->预测序列：manner spielen fu ball auf einer schlammigen wiese .
+==目标序列：manner spielen auf einem matschigen platz fu ball .
+
+输入序列->：people standing outside of a building .
+->预测序列：leute stehen vor einem gebaude .
+==目标序列：leute , die vor einem gebaude stehen .
+
+输入序列->：young kids are on a small train ride .
+->预测序列：kleine kinder fahren auf einem kleinen zug .
+==目标序列：kleine kinder fahren in einem <unk> .
+
+输入序列->：people walking about a university <unk> with palm trees in the background .
+->预测序列：menschen gehen daruber uber eine <unk> vor palmen im hintergrund .
+==目标序列：menschen laufen uber einen <unk> mit palmen im hintergrund .
+
+输入序列->：a group of village women gathered in dance
+->预测序列：eine gruppe von <unk> frauen tanzt .
+==目标序列：eine gruppe von <unk> versammelt sich beim tanz .
+
+输入序列->：a man is at the beach making a sand sculpture .
+->预测序列：ein mann am strand stellt eine sandskulptur her .
+==目标序列：ein mann ist am strand und macht eine sandskulptur .
+
+输入序列->：for <unk> state <unk> arms a texas am player attempting to tackle him .
+->预测序列：<unk> <unk> arme <unk> ein <unk> , um sich zum <unk> <unk> .
+==目标序列：die von <unk> state streckt den arm in richtung eines spielers der texas am beim versuch , ihn zu tackeln .
+
+输入序列->：a woman wearing a denim jacket walking along a sidewalk
+->预测序列：eine frau , die eine jeansjacke tragt , geht auf dem burgersteig spazieren .
+==目标序列：eine frau in einer jeansjacke geht auf einem gehsteig .
+
+输入序列->：a young man wearing a white t shirt and green and black shorts standing on a stump .
+->预测序列：ein junger mann in einem wei en t shirt und grunen shorts steht auf einem baumstumpf .
+==目标序列：ein junger mann in einem wei en t shirt und grun schwarzen shorts steht auf einem baumstumpf .
+
+输入序列->：a man using the bathroom mirror to tie his tie .
+->预测序列：ein mann verwendet im badezimmer , um seine krawatte zu binden .
+==目标序列：ein mann verwendet den <unk> , um seine krawatte zu binden .
+
+输入序列->：a father figure and two children outside their home doing yard work such as using a <unk> on the grass and planting a tree .
+->预测序列：ein vater und zwei kinder spielen im freien banjo und arbeiten dabei mit dem <unk> einer <unk> auf dem rasen einer wiese .
+==目标序列：eine <unk> und zwei kinder machen vor ihrem zuhause <unk> wie den rasen mit einer <unk> zu <unk> und einen baum zu pflanzen .
+
+输入序列->：a hispanic woman is using a outdoors <unk> to cook .
+->预测序列：eine <unk> frau verwendet im freien <unk> .
+==目标序列：eine <unk> frau kocht im freien in einem <unk> .
+
+输入序列->：the four people sit on a pile of rocks .
+->预测序列：die vier personen sitzen auf einem haufen von felsen .
+==目标序列：die vier personen sitzen auf einem haufen von steinen .
+
+输入序列->：a male worker with his tool box is kneeling next to two women .
+->预测序列：ein arbeiter mit einem werkzeug kniet neben zwei frauen .
+==目标序列：ein arbeiter mit <unk> kniet neben zwei frauen .
+
+输入序列->：a dog is jumping through a <unk> obstacle .
+->预测序列：ein hund springt uber eine <unk> .
+==目标序列：ein hund springt durch ein <unk> hindernis .
+
+输入序列->：an african tribe is standing in their garden with the forest in the background .
+->预测序列：ein afrikanischer <unk> steht in ihrem garten und im hintergrund ist das wald zu sehen .
+==目标序列：ein afrikanischer stamm steht im garten mit dem wald im hintergrund .
+
+输入序列->：a brown dog with a purple frisbee in its mouth .
+->预测序列：ein brauner hund mit einer lilafarbenen frisbee im maul .
+==目标序列：ein brauner hund mit einem <unk> frisbee im mund .
+
+输入序列->：a table full of pictures in frames , at an outdoor market .
+->预测序列：ein tisch voller bilder auf einem markt im freien , die an einem tisch sind .
+==目标序列：ein tisch voller <unk> bilder , ein freiluftmarkt .
+
+输入序列->：a group of people are sitting in chairs .
+->预测序列：eine gruppe menschen sitzt auf stuhlen .
+==目标序列：eine gruppe von leuten , die auf stuhlen sitzen .
+
+输入序列->：a man is loading a box truck with lots of baked <unk> .
+->预测序列：ein mann ladt einen <unk> mit vielen <unk> .
+==目标序列：ein mann ladt <unk> <unk> auf einen koffer lkw .
+
+输入序列->：a woman with pink hair bent down on the sidewalk holding to pink dogs .
+->预测序列：eine frau mit rosa haar geht mit einem rosa hunden auf dem gehweg <unk> .
+==目标序列：eine frau mit pinken haaren beugt sich auf dem gehweg hinunter und halt zwei <unk> hunde .
+
+输入序列->：basketball players <unk> for the ball and one in red jersey trying to take ball from guy in white jersey .
+->预测序列：basketballspieler versuchen den ball <unk> und ein spieler in einem roten trikot versucht den ball <unk> .
+==目标序列：basketballspieler kampfen um den ball , wahrend einer in einem roten trikot versucht , einem in einem wei en trikot den ball <unk> .
+
+输入序列->：a young lady in white holding a tennis racket
+->预测序列：eine junge dame in wei halt einen tennisschlager .
+==目标序列：eine junge dame in wei halt einen tennisschlager .
+
+输入序列->：a woman and a child are walking down a street .
+->预测序列：eine frau und ein kind gehen eine stra e entlang .
+==目标序列：eine frau und ein kind gehen eine stra e entlang .
+
+输入序列->：a cat sits on top of a store sign .
+->预测序列：eine katze sitzt auf einem <unk> .
+==目标序列：eine katze sitzt auf einem <unk> .
+
+输入序列->：a girl wearing a life vest floats in water .
+->预测序列：ein madchen mit einer schwimmweste trinkt im wasser .
+==目标序列：ein madchen in einer rettungsweste treibt im wasser .
+
+输入序列->：two people and a <unk> cow at a home .
+->预测序列：zwei menschen und ein <unk> kuh am strand .
+==目标序列：zwei personen und eine <unk> kuh vor einem haus .
+
+输入序列->：two people sit at a table outside against a wall and make faces .
+->预测序列：zwei personen sitzen im freien an eine wand und machen grimassen .
+==目标序列：zwei personen sitzen gegen eine wand gelehnt an einem tisch im freien und machen grimassen .
+
+输入序列->：a person in a bandanna stands on the street in front his things .
+->预测序列：eine person mit einem halstuch steht auf der stra e vor seinem publikum .
+==目标序列：eine mann mit einem stirnband steht auf der stra e vor seinen sachen .
+
+输入序列->：a basketball player in white squats while a player in red moves toward him .
+->预测序列：ein basketballspieler in wei en hocke , wahrend ein spieler in roter kleidung versucht ihn zu beruhren . .
+==目标序列：ein basketballspieler in wei geht in die hocke wahrend ein spieler in rot auf ihn zu lauft .
+
+输入序列->：two adults and two children sit on a park bench .
+->预测序列：zwei erwachsene und zwei kinder sitzen auf einer parkbank .
+==目标序列：zwei erwachsene und zwei kinder sitzen auf einer parkbank .
+
+输入序列->：a group of people standing in front of an <unk> .
+->预测序列：eine gruppe von menschen steht vor einem <unk> .
+==目标序列：eine gruppe von menschen steht vor einem <unk> .
+
+输入序列->：a worker in an orange vest is using a shovel .
+->预测序列：ein arbeiter in einer orangefarbenen weste benutzt eine <unk> .
+==目标序列：ein arbeiter in einer orangefarbenen weste arbeitet mit einer schaufel .
+
+输入序列->：two young girls run on a sidewalk outside of a brick building with banners on it .
+->预测序列：zwei kleine madchen rennen auf einem gehweg vor einem backsteingebaude mit <unk> <unk> .
+==目标序列：zwei junge madchen rennen auf einem gehsteig vor einem ziegelgebaude mit <unk> .
+
+输入序列->：the lady wearing black rimmed glasses and a yellow sweater jacket looks confused as she sits on the tan covered bench .
+->预测序列：die dame mit einer schwarzen <unk> und einer gelben jacke sitzt und schaut <unk> , wahrend sie auf der <unk> bank sitzt .
+==目标序列：die dame mit der schwarz <unk> brille und der gelben <unk> blickt verwirrt wahrend sie auf der braunen bank sitzt .
+
+输入序列->：two boys cross a city street while kicking a red soccer ball .
+->预测序列：zwei jungen uberqueren eine stra e in der stadt , wahrend der rotem fu ball schie t .
+==目标序列：zwei jungen uberqueren eine stra e in einer stadt wahrend sie mit einem roten fu ball spielen .
+
+输入序列->：three young adults talk in a crowd of people , the woman looks upset .
+->预测序列：drei junge erwachsene unterhalten sich in einer menschenmenge , wahrend die frau zusieht .
+==目标序列：drei jugendliche reden in einer menschenmenge , die frau blickt verargert .
+
+输入序列->：the <unk> <unk> during a reception where participants have <unk> <unk> , <unk> and prayer flags .
+->预测序列：der <unk> <unk> bei einer <unk> , wo ich <unk> <unk> , <unk> und <unk> flaggen haben .
+==目标序列：der <unk> lama bei einem <unk> , zu dem <unk> <unk> , <unk> und <unk> bringen .
+
+输入序列->：a smiling young boy plays in the leaves among the ducks .
+->预测序列：ein lachelnder kleiner junge spielt zwischen seinen <unk> .
+==目标序列：ein lachelnder junge spielt im laub mit den enten .
+
+输入序列->：a woman in a red shirt is riding an all white horse that is galloping along the trees .
+->预测序列：eine frau in einem roten oberteil reitet auf einem ganz wei en pferd auf den baumen .
+==目标序列：eine frau in einem roten hemd reitet auf einem wei en pferd , das an den baumen entlang <unk> .
+
+输入序列->：two children sit side by side while eating a treat .
+->预测序列：zwei kinder sitzen neben seite und essen eine su <unk> .
+==目标序列：zwei kinder sitzen nebeneinander und essen su igkeiten .
+
+输入序列->：a lady with tattoos is taking a picture of a painting with her <unk> .
+->预测序列：eine dame mit tatowierungen macht ein foto von ihrem <unk> .
+==目标序列：eine frau mit tattoos macht mit ihrem handy ein foto von einem gemalde .
+
+输入序列->：a tan dog playing with a stick on the shore .
+->预测序列：ein hellbrauner hund spielt mit einem stock am ufer .
+==目标序列：ein brauner hund spielt am ufer mit einem stock .
+
+输入序列->：four black men are sitting on the steps of a church .
+->预测序列：vier dunkelhautige manner sitzen auf den stufen einer kirche .
+==目标序列：vier schwarze manner sitzen auf den stufen einer kirche .
+
+输入序列->：a woman in a blue shirt walking in a village .
+->预测序列：eine frau in blauem hemd geht in einem dorf spazieren .
+==目标序列：eine frau in einem blauen shirt spaziert in einem dorf .
+
+输入序列->：a woman runs after making a hit in women s softball , the catcher <unk> to her feet .
+->预测序列：eine frau lauft einem schlag nach dem schlag aus den usa , nachdem sie ihre fu e entlanggehen .
+==目标序列：eine frau lauft beim softball nach einem <unk> schlag los wahrend die <unk> sich erhebt .
+
+输入序列->：four females of asian descent are wearing golden dresses while performing point ballet .
+->预测序列：vier frauen asiatischer herkunft tragen <unk> und geben eine <unk> .
+==目标序列：vier frauen asiatischer herkunft tragen <unk> kleider und tanzen ballett .
+
+输入序列->：a man and woman are <unk> arms sitting down and all dressed up .
+->预测序列：ein mann und eine frau , die gut gekleidet sind , sitzen und alle in die arme .
+==目标序列：ein mann und eine frau sitzen , fein gekleidet und mit <unk> armen .
+
+输入序列->：a woman in a red vest working at a computer .
+->预测序列：eine frau in einer roten weste arbeitet am computer .
+==目标序列：eine frau in einer roten weste arbeitet am computer .
+
+输入序列->：two men in white plastic chairs sitting in a doorway .
+->预测序列：zwei manner in wei en <unk> sitzen in einer toreinfahrt .
+==目标序列：zwei manner auf wei en <unk> sitzen in einem eingang .
+
+输入序列->：three men are cooking in a kitchen .
+->预测序列：drei manner kochen in einer kuche .
+==目标序列：drei manner kochen in einer kuche .
+
+输入序列->：two people are laying down and kissing on a grassy lawn .
+->预测序列：zwei menschen liegen drau en und kussen sich auf einer wiese .
+==目标序列：zwei personen liegen auf einem rasen und kussen sich .
+
+输入序列->：the woman in the red dress is dancing with the man in a suit .
+->预测序列：die frau in dem roten kleid tanzt mit dem mann im anzug .
+==目标序列：die frau im roten kleid tanzt mit dem mann im anzug .
+
+输入序列->：a boy poses with a large green <unk> on his nose .
+->预测序列：ein junge posiert mit einem gro en grunen <unk> auf der nase .
+==目标序列：ein junge posiert mit einem gro en grunen <unk> auf der nase .
+
+输入序列->：two children are playing on a bicycle .
+->预测序列：zwei kinder spielen auf einem fahrrad .
+==目标序列：zwei jungen spielen auf einem fahrrad .
+
+输入序列->：a family is walking on the sidewalk through the snow while a man sits on the side with his paper cup .
+->预测序列：eine familie geht auf dem gehweg und durch den schnee sitzt ein mann sitzt dabei auf der <unk> .
+==目标序列：eine familie geht auf dem gehsteig durch den schnee wahrend am rand ein mann mit seinem <unk> sitzt .
+
+输入序列->：the boy wearing a black shirt and blue jeans is holding a red baseball bat .
+->预测序列：der junge im schwarzen hemd und blauer jeans halt einen roten <unk> .
+==目标序列：der junge im schwarzen t shirt und blauen jeans halt einen roten baseballschlager .
+
+输入序列->：two young men play electric guitars on stage .
+->预测序列：zwei junge manner spielen e auf einer buhne im schnee .
+==目标序列：zwei junge manner spielen e gitarren auf einer buhne .
+
+输入序列->：some children are outside playing in the dirt where two trees are .
+->预测序列：ein paar kinder spielen im freien , wo zwei baumen befinden sich hin befinden .
+==目标序列：ein paar kinder sind im freien und spielen auf dem boden bei zwei baumen .
+
+输入序列->：a man sits on a bench holding his dog and looking at the water .
+->预测序列：ein mann sitzt auf einer bank und halt seinen hund und blickt auf das wasser .
+==目标序列：ein mann sitzt auf einer bank wahrend er seinen hund halt und aufs wasser blickt .
+
+输入序列->：a person in blue is the only person currently throwing their ball at a bowling alley .
+->预测序列：eine person in blau wirft die <unk> person , die sie auf einer bowlingbahn in der bowlingbahn wirft .
+==目标序列：eine person in blau wirft auf einer bowlingbahn als <unk> ihre kugel .
+
+输入序列->：two males from the green team tackles the other members from black team for the ball in a game of rugby .
+->预测序列：zwei manner aus dem grunen team <unk> bei einer schwarzen mannschaft die <unk> , um den ball vor .
+==目标序列：zwei manner vom grunen team tackeln in einem <unk> die anderen spieler des schwarzen teams , um an den ball zu kommen .
+
+输入序列->：a person is looking at the computer on a desk with a phone and a box .
+->预测序列：eine person blickt auf den computer mit einem telefon und einem <unk> .
+==目标序列：eine person sieht zum computer auf einem tisch mit einem telefon und einer schachtel .
+
+输入序列->：a family going for a walk in a park .
+->预测序列：eine familie geht in einem park auf eine spazieren .
+==目标序列：eine familie spaziert durch einen park .
+
+输入序列->：an african american man walking down the street .
+->预测序列：ein afroamerikaner geht die stra e entlang .
+==目标序列：ein afroamerikaner geht die stra e hinunter .
 
 输入序列->：two men in army uniforms stand next to a woman .
-->预测序列：
+->预测序列：zwei manner in armee stehen neben einer frau .
 ==目标序列：zwei manner in <unk> stehen neben einer frau .
 
-输入序列->：a blond girl sleeps on a brown couch .
-->预测序列：
-==目标序列：ein blondes madchen schlaft auf einer braunen couch .
+输入序列->：a boy at a gun range <unk> and shoots .
+->预测序列：ein junge auf einer pistole <unk> und schie t .
+==目标序列：ein junge zielt und schie t auf einem schie stand .
+
+输入序列->：a woman in a floral dress talks to children in front of a van .
+->预测序列：eine frau in einem geblumten kleid spricht vor einem <unk> .
+==目标序列：eine frau in einem kleid mit blumenmuster spricht mit kindern vor einem <unk> .
+
+输入序列->：a young lady and man dressed in <unk> costume <unk> sticks with a group of people in the background .
+->预测序列：eine junge dame und ein mann in <unk> kostumen mit einer gruppe von menschen im hintergrund .
+==目标序列：eine junge frau und ein mann in <unk> <unk> vor einer gruppe im hintergrund mit schwertern .
+
+输入序列->：a man is sitting next to a computer monitor .
+->预测序列：ein mann sitzt neben einem computer .
+==目标序列：ein mann sitzt neben einem <unk> .
+
+输入序列->：very young boy in a green shirt laying face down on a white bed .
+->预测序列：ein sehr kleiner junge mit grunem hemd liegt mit dem gesicht nach unten auf einem wei en bett .
+==目标序列：sehr kleiner junge in einem grunen shirt liegt mit dem gesicht nach unten auf einem wei en bett .
+
+输入序列->：people look on as participants in a marathon pass by .
+->预测序列：menschen schauen auf , wahrend schuler vorbeigehen .
+==目标序列：leute sehen zu wahrend marathonlaufer vorbeilaufen .
+
+输入序列->：a man in a black shirt fishing on a rocky shore .
+->预测序列：ein mann in einem schwarzen hemd beim fischen an einem felsigen ufer .
+==目标序列：ein mann in einem schwarzen shirt angelt an einem felsigen ufer .
+
+输入序列->：the yellow dog is carrying a stick by water .
+->预测序列：der gelbe hund tragt einen stock am wasser .
+==目标序列：der gelbe hund tragt einen stock <unk> wasser .
+
+输入序列->：man in shorts standing by the water .
+->预测序列：ein mann in kurzen hosen steht am wasser .
+==目标序列：ein mann in shorts steht am wasser .
+
+输入序列->：a woman and a child embrace while the child <unk> what they have been making .
+->预测序列：eine frau und ein kind waten , wahrend das kind <unk> , was sie <unk> hat .
+==目标序列：eine frau und ein kind umarmen sich wahrend das kind kostet , was sie gerade gemeinsam zubereiten .
+
+输入序列->：a view of a pedestrian <unk> , featuring a man in a black apron and a white baseball cap standing in the middle of the image .
+->预测序列：eine blick von oben auf einen mann mit einer schwarzen schurze und einer schwarzen schurze , die in der mitte steht und eine wei e <unk> starrt .
+==目标序列：ein ausblick auf eine fu <unk> mit einem mann in einer schwarzen schurze und wei en baseballmutze , der in der mitte des bildes steht .
+
+输入序列->：two men work under the hood of a white race car .
+->预测序列：zwei manner arbeiten in der motorhaube eines wei en rennwagen .
+==目标序列：zwei manner arbeiten unter der <unk> eines wei en rennautos .
+
+输入序列->：a group of children play together in a fenced yard as an adult watches .
+->预测序列：eine gruppe kinder spielt zusammen auf einem eingezaunten hof , wahrend ein erwachsener zuschaut .
+==目标序列：eine gruppe kinder spielt in einem eingezaunten hof wahrend ein erwachsener zusieht .
+
+输入序列->：a group of men in red and black jackets waits on motorcycles .
+->预测序列：eine gruppe von mannern in roten und schwarzen jacken wartet auf motorradern .
+==目标序列：eine gruppe von mannern in roten und schwarzen jacken sitzt auf motorradern und wartet .
+
+输入序列->：basketball players shoot for a goal during a game .
+->预测序列：basketballspieler werfen zum <unk> bei einem spiel zu .
+==目标序列：basketballspieler versuchen wahrend eines spiels , einen korb zu erzielen .
+
+输入序列->：a <unk> performs a flip while being <unk> at high speed .
+->预测序列：ein <unk> fuhrt einen salto aus , wahrend er in der luft <unk> .
+==目标序列：ein <unk> macht einen salto wahrend er bei hoher geschwindigkeit an einem seil gezogen wird .
+
+输入序列->：a woman directs a crowd of people with a <unk> .
+->预测序列：eine frau gibt einer menschenmenge eine menschenmenge mit einem <unk> .
+==目标序列：eine frau gibt einer gruppe anweisungen uber einen lautsprecher .
+
+输入序列->：two race cars , one red and one blue , are driving side by side down a racetrack while being watched by several onlookers .
+->预测序列：zwei rennwagen , einer rot und einer blauen , fahren nebeneinander und werden von einer rennstrecke beobachtet , wahrend jemand auf ihren <unk> <unk> .
+==目标序列：zwei rennautos , eines rot und das andere blau , fahren nebeneinander auf einer rennstrecke wahrend mehrere personen zusehen .
+
+输入序列->：several men dressed in orange gather for an outdoor social event .
+->预测序列：mehrere manner in orange versammeln sich auf einer <unk> im freien .
+==目标序列：mehrere manner in orange versammeln sich im freien fur ein <unk> ereignis .
+
+输入序列->：three young children are walking through a grassy yard .
+->预测序列：drei kleine kinder gehen uber einen grasbewachsenen garten .
+==目标序列：drei kleine kinder gehen durch einen grasbewachsenen hof .
+
+输入序列->：a chinese man sitting down waiting for customers .
+->预测序列：ein chinesischer mann sitzt und wartet auf kunden .
+==目标序列：ein <unk> sitzt und wartet auf <unk> .
+
+输入序列->：two middle aged police officers watch over a parking lot , at night .
+->预测序列：zwei polizisten mittleren alters beobachten einen parkplatz bei nacht .
+==目标序列：zwei polizisten mittleren alters beobachten nachts einen parkplatz .
+
+输入序列->：a woman sitting against a brick wall inside a building .
+->预测序列：eine frau sitzt in einem gebaude an eine ziegelmauer .
+==目标序列：eine frau sitzt gegen eine ziegelwand gelehnt in einem gebaude .
+
+输入序列->：a yellow bulldozer working to move dirt .
+->预测序列：ein gelbes bulldozer .
+==目标序列：ein gelber bulldozer <unk> <unk> aus dem weg .
+
+输入序列->：the two dogs , one with a tennis ball in its mouth , are running through tall grass .
+->预测序列：der zwei hunde , einer mit einem tennisball im maul , laufen durch hohes gras .
+==目标序列：die zwei hunde , einer mit einem tennisball im maul , laufen durch hohes gras .
+
+输入序列->：kids scale a wall as two other people watch .
+->预测序列：kinder einer wand , wahrend zwei andere menschen zuschauen .
+==目标序列：kinder klettern auf eine wand wahrend zwei weitere personen zusehen .
+
+输入序列->：a man is using electronic equipment .
+->预测序列：ein mann verwendet die elektronischen <unk> .
+==目标序列：ein mann verwendet <unk> <unk> .
+
+输入序列->：a woman in black is holding something in her mouth .
+->预测序列：eine frau in schwarz halt etwas in seiner schnauze .
+==目标序列：ein frau in schwarz halt etwas im mund .
+
+输入序列->：a man fixing a little girl s bicycle .
+->预测序列：ein mann , der das fahrrad eines kleinen madchens repariert .
+==目标序列：ein mann repariert das fahrrad eines kleinen madchens .
+
+输入序列->：an <unk> cyclist stops to rest as the sun sets in the background .
+->预测序列：ein <unk> dreht sich vor bei sonnenuntergang im hintergrund .
+==目标序列：ein <unk> ruht sich aus wahrend im hintergrund die sonne untergeht .
+
+输入序列->：a kid swings with his feet up in the air in a forest .
+->预测序列：ein kind schwingt seine fu e im wald in die luft .
+==目标序列：ein junge schaukelt mit den fu en in der luft in einem wald .
+
+输入序列->：a brown dog runs down the sandy beach .
+->预测序列：ein brauner hund rennt den sandstrand hinunter .
+==目标序列：ein brauner hund lauft uber den sandstrand .
+
+输入序列->：two men wearing hats .
+->预测序列：zwei manner mit huten .
+==目标序列：zwei manner mit huten .
+
+输入序列->：an older man is playing a video arcade game .
+->预测序列：ein alterer mann spielt ein <unk> <unk> . .
+==目标序列：ein alterer mann spielt ein videospiel .
+
+输入序列->：a worker in a yellow jacket is <unk> up high to work on a building .
+->预测序列：ein arbeiter in gelber jacke <unk> hoch zur arbeit an einem gebaude .
+==目标序列：ein arbeiter in einer gelben jacke wird auf ein gebaude gehoben , um zu arbeiten .
+
+输入序列->：a man in a plaid shirt shows off a black set of gloves .
+->预测序列：ein mann mit kariertem hemd zeigt einer schwarzen <unk> .
+==目标序列：ein mann in einem karierten hemd zeigt ein schwarzes paar handschuhe .
+
+输入序列->：two woman wearing similar shirts walk to the left .
+->预测序列：zwei frauen in <unk> hemden gehen nach links .
+==目标序列：zwei frauen in <unk> hemden gehen nach links .
+
+输入序列->：a little girl is pushing her scooter through a grassy tree lined field .
+->预测序列：ein kleines madchen schiebt ihre roller auf einer wiese .
+==目标序列：ein kleines madchen schiebt seinen roller uber ein grasbewachsenes feld mit baumen .
+
+输入序列->：little girl kicks black object at karate class .
+->预测序列：ein kleines madchen kickt den arm in der karate an der klasse .
+==目标序列：ein kleines madchen tritt in einem <unk> einen schwarzen gegenstand .
+
+输入序列->：a man in an orange jumpsuit and matching hard hat is helping with a blue hose
+->预测序列：ein mann in orangefarbenem overall und <unk> schutzhelm hilft einem blauen schlauch mit einem blauen schlauch .
+==目标序列：ein mann in einem orangefarbenen overall und <unk> schutzhelm hilft mit einem blauen schlauch
+
+输入序列->：brunette woman in a white bikini pouring a drink into a man s cup .
+->预测序列：eine brunette frau in einem wei en bikini gie t einen mann in die tasse .
+==目标序列：eine brunette frau in einem wei en bikini gie t einem mann einen drink ins glas .
+
+输入序列->：a man trying to ride a very <unk> bull on a beautiful <unk> afternoon .
+->预测序列：ein mann versucht einen sehr <unk> bullen auf einem wunderschonen <unk> bullen zu fahren .
+==目标序列：ein mann versucht an einem schonen <unk> , einen sehr <unk> bullen zu reiten .
+
+输入序列->：an oriental <unk> <unk> his turn at the <unk> <unk> .
+->预测序列：ein orientalischer <unk> legt seine <unk> vom <unk> <unk> ab .
+==目标序列：ein orientalischer <unk> wartet am <unk> bis er <unk> ist .
+
+输入序列->：the young lady is looking at the pizza .
+->预测序列：die junge dame schaut auf die pizza .
+==目标序列：die junge dame sieht auf die pizza .
+
+输入序列->：a boy sitting on and looking out from a microscope .
+->预测序列：ein junge sitzt auf und schaut von einem mikroskop an .
+==目标序列：ein junge sitzt an einem mikroskop und blickt auf .
+
+输入序列->：two horse racing jockeys , one in checkered blue and red and the other in orange and brown , are racing against a blurry background .
+->预测序列：zwei reiter , eins in blau und blau und der andere in orange umarmen sich vor einem <unk> hintergrund .
+==目标序列：zwei jockeys , einer in blauen <unk> und der andere in orange und braun , <unk> sich ein rennen vor einem <unk> hintergrund .
+
+输入序列->：two people are kissing on a sidewalk in front of a <unk> while people walk by .
+->预测序列：zwei menschen kussen sich auf einem gehweg vor einem <unk> , wahrend menschen vorbeigehen .
+==目标序列：zwei personen kussen sich auf einem gehsteig vor eine limousine wahrend leute vorbeigehen .
+
+输入序列->：four men , three of whom are wearing prayer caps , are sitting on a blue and olive green patterned mat .
+->预测序列：vier manner , von denen drei <unk> tragen und <unk> <unk> , sitzen auf einer blauen <unk> und klavier grune grune <unk> .
+==目标序列：vier manner , drei von ihnen mit <unk> , sitzen auf einer blau und <unk> gemusterten matte .
+
+输入序列->：a young girl swimming in a pool
+->预测序列：ein junges madchen schwimmt in einem becken .
+==目标序列：ein junges madchen schwimmt in einem pool
+
+输入序列->：two young girls are sitting on the street eating corn .
+->预测序列：zwei junge madchen sitzen auf der stra e und essen <unk> .
+==目标序列：zwei junge madchen sitzen auf der stra e und essen mais .
+
+输入序列->：a man wearing a gray shirt , blue jeans and a neon green safety vest is standing on a railroad track with a white truck and a white building in the background .
+->预测序列：ein mann in einem grauen hemd , blauer jeans und einer <unk> in der hand steht auf einer <unk> mit einem wei en <unk> im hintergrund .
+==目标序列：ein mann mit einem grauen hemd , blauen jeans und <unk> sicherheitsweste steht mit einem wei en lieferwagen und einem wei en gebaude im hintergrund auf einer <unk> .
+
+输入序列->：two <unk> are singing and playing on a dark stage .
+->预测序列：zwei <unk> singen und spielen auf einer dunklen buhne .
+==目标序列：zwei <unk> singen und spielen auf einer dunklen buhne .
+
+输入序列->：a man wearing a black hat taking a photo in a busy street .
+->预测序列：ein mann mit einer schwarzen kopfbedeckung fotografiert in einer belebten stra e ein foto .
+==目标序列：ein mann mit einem schwarzen hut macht ein foto auf einer belebten stra e .
+
+输入序列->：a man and a woman are standing on the street in the city .
+->预测序列：ein mann und eine frau stehen in der stadt auf der stra e .
+==目标序列：ein mann und eine frau stehen in einer stadt auf der stra e .
+
+输入序列->：boy in red shirt and black shorts sweeps driveway .
+->预测序列：ein junge in einem roten hemd und schwarzen shorts beim <unk> .
+==目标序列：ein junge in einem roten shirt und schwarzen shorts kehrt eine einfahrt .
+
+输入序列->：a couple sitting in white lawn chairs are smiling at the camera .
+->预测序列：ein paar sitzt auf wei en wiese und lachelt in die kamera .
+==目标序列：ein paar sitzt auf wei en gartenstuhlen und lachelt in die kamera .
+
+输入序列->：a crowd is present at a bar .
+->预测序列：eine menschenmenge schwenkt in einer bar .
+==目标序列：eine gruppe ist in einer bar .
 
