@@ -3,9 +3,9 @@
 
 # 待完成
 
-- [ ] transformer翻译模组--External-Attention-pytorch <br>
+- [ ] transformer翻译模组--External-Attention-pytorch::各模组的代码可正常运行！ <br>
     pip install -i https://pypi.tuna.tsinghua.edu.cn/simple fightingcv_attention
-- [ ] transformer翻译模组--trax
+- [ ] transformer翻译模组--attention-is-all-you-need-pytorch
 - [ ] transformer预测模组
 
 
@@ -18,6 +18,7 @@
 
 Ref.    
 ** [External-Attention-pytorch](https://github.com/xmu-xiaoma666/External-Attention-pytorch) <br>
+** [attention-is-all-you-need-pytorch](https://github.com/jadore801120/attention-is-all-you-need-pytorch) <br>
 ** [trax](https://github.com/google/trax) <br>
 ** [tensor2tensor（trax前代版本）](https://github.com/tensorflow/tensor2tensor)  <br>
 ** [Reproduce_the_Transformer_model-master项目](https://github.com/scnu-dil/Reproduce_the_Transformer_model) <br>
