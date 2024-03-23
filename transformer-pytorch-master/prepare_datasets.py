@@ -13,15 +13,20 @@ parser.add_argument('--train_target', type=str, default='data/example/raw/tgt-tr
 parser.add_argument('--val_source', type=str, default='data/example/raw/src-val.txt')
 parser.add_argument('--val_target', type=str, default='data/example/raw/tgt-val.txt')
 parser.add_argument('--save_data_dir', type=str, default='data/example/processed')
+    # 语言相近的词汇对，可使用共享词汇表
 parser.add_argument('--share_dictionary', type=bool, default=False)
 
 args = parser.parse_args()
 
+    # prepare为@static函数，独立于类，可直接调用
+    # 1. 输入基于行的src/tgt文件，返回基于(src,tgt)字符串的dataset
+        # 分别基于原始文件进行处理，和构建中间文件进行处理
 TranslationDataset.prepare(args.train_source, args.train_target, args.val_source, args.val_target, args.save_data_dir)
 translation_dataset = TranslationDataset(args.save_data_dir, 'train')
 translation_dataset_on_the_fly = TranslationDatasetOnTheFly('train')
 assert translation_dataset[0] == translation_dataset_on_the_fly[0]
 
+    # 2. 输入基于(src, tgt)字符串的dataset，返回基于(src, tgt)列表的dataset
 tokenized_dataset = TokenizedTranslationDataset(args.save_data_dir, 'train')
 
 if args.share_dictionary:

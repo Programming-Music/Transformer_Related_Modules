@@ -11,6 +11,9 @@ END_TOKEN = '<EndSent>'
 
 
 class IndexDictionary:
+    """
+       源语言/目标语言中，词汇的索引映射，如 hello -> 123
+    """
 
     def __init__(self, iterable=None, mode='shared', vocabulary_size=None):
 

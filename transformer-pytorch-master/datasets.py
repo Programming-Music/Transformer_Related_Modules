@@ -7,6 +7,10 @@ BASE_DIR = dirname(abspath(__file__))
 
 
 class TranslationDatasetOnTheFly:
+    """
+        基于文件行的输入src/输出tgt构建数据集[src, tgt]，支持 train/val, limit限制
+    """
+
 
     def __init__(self, phase, limit=None):
         assert phase in ('train', 'val'), "Dataset phase must be either 'train' or 'val'"
@@ -22,6 +26,7 @@ class TranslationDatasetOnTheFly:
         else:
             raise NotImplementedError()
 
+        # 按行读取元素
         with open(source_filepath) as source_file:
             self.source_data = source_file.readlines()
 
@@ -32,6 +37,7 @@ class TranslationDatasetOnTheFly:
         if self.limit is not None and item >= self.limit:
             raise IndexError()
 
+        # 删除首尾的空格、换行符
         source = self.source_data[item].strip()
         target = self.target_data[item].strip()
         return source, target
@@ -44,6 +50,10 @@ class TranslationDatasetOnTheFly:
 
 
 class TranslationDataset:
+    """
+        基于匹对后的raw-train.txt文件, 构建dataset((sour, tgt))
+    """
+
 
     def __init__(self, data_dir, phase, limit=None):
         assert phase in ('train', 'val'), "Dataset phase must be either 'train' or 'val'"
@@ -52,6 +62,7 @@ class TranslationDataset:
 
         self.data = []
         with open(join(data_dir, f'raw-{phase}.txt')) as file:
+            print(file)
             for line in file:
                 source, target = line.strip().split('\t')
                 self.data.append((source, target))
@@ -68,8 +79,12 @@ class TranslationDataset:
         else:
             return self.limit
 
+    # 解除与实例的耦合，便于独立调用
     @staticmethod
     def prepare(train_source, train_target, val_source, val_target, save_data_dir):
+        """
+        基于行的输入/目标数据集：src/tgt-train.txt，返回基于行的(输入'\t'输出)建模数据集: row-train.txt
+        """        
 
         if not exists(save_data_dir):
             makedirs(save_data_dir)
@@ -114,6 +129,10 @@ class TokenizedTranslationDatasetOnTheFly:
 
 
 class TokenizedTranslationDataset:
+    """
+        基于(src, tgt)dataset，将元素句子字符串，处理为包含单词的列表
+    """
+
 
     def __init__(self, data_dir, phase, limit=None):
 

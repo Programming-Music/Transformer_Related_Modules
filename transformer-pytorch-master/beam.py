@@ -2,9 +2,15 @@ import torch
 
 
 class Beam:
+    """
+    作为序列到序列任务的transformer，生成目标预测时，需要对预测结果进行解码
+        Greedy Search, 对概率最高的词进行解码  
+        Beam Search, 保留k个最优的解码路径, 即Beam
+    """    
 
     def __init__(self, beam_size=8, min_length=0, n_top=1, ranker=None,
                  start_token_id=2, end_token_id=3):
+                 
         self.beam_size = beam_size
         self.min_length = min_length
         self.ranker = ranker
