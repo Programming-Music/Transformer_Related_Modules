@@ -36,10 +36,11 @@ To train model, provide the train script with a path to processed data and save 
 ```
 python train.py --data_dir=data/example/processed --save_config=checkpoints/example_config.json --save_checkpoint=checkpoints/example_model.pth --save_log=logs/example.log 
 ```
-speed test in local 
-    2060 MaxQ, train_15s - val_2.5s
-speed test in http://gpu.ai-galaxy.cn/
-    2080ti*1 with high performance mode, train_7s - val_1s
+speed test in local<br>
+- 2060 MaxQ, train_15s - val_2.5s<br>
+
+speed test in http://gpu.ai-galaxy.cn/<br>
+- 2080ti*1 with high performance mode, train_7s - val_1s
 
 
 This saves model config and checkpoints to given files, respectively.
