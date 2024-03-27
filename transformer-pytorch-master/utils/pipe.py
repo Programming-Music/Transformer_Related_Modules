@@ -36,6 +36,11 @@ def input_target_collate_fn(batch):
 
 
 def shared_tokens_generator(dataset):
+    """
+    依次处理源域、目标域部分
+     :param dataset: 
+    yield: _description_
+    """    
     for source, target in dataset:
         for token in source:
             yield token
@@ -44,6 +49,11 @@ def shared_tokens_generator(dataset):
 
 
 def source_tokens_generator(dataset):
+    """
+    仅处理源域-目标域中的源域部分
+     :param dataset: 基于(src, tgt)列表的数据集
+    yield: 基于yield吐出元素的生成器
+    """    
     for source, target in dataset:
         for token in source:
             yield token

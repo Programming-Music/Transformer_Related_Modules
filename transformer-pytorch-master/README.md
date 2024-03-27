@@ -15,7 +15,8 @@ This repo focuses on clean, readable, and modular implementation of the paper.
 ## Usage
 
 ### Prepare datasets
-This repo comes with example data in `data/` directory. To begin, you will need to prepare datasets with given data as follows:
+This repo comes with example data in `data/` directory. To begin, you will need to prepare datasets with given data as follows(with standard ternary sequence: source, input, target):
+
 ```
 $ python prepare_datasets.py --train_source=data/example/raw/src-train.txt --train_target=data/example/raw/tgt-train.txt --val_source=data/example/raw/src-val.txt --val_target=data/example/raw/tgt-val.txt --save_data_dir=data/example/processed
 ```

@@ -13,6 +13,7 @@ END_TOKEN = '<EndSent>'
 class IndexDictionary:
     """
        源语言/目标语言中，词汇的索引映射，如 hello -> 123
+       根据生成器构建字典，并构建标记-索引字典
     """
 
     def __init__(self, iterable=None, mode='shared', vocabulary_size=None):
@@ -29,6 +30,11 @@ class IndexDictionary:
         self.mode = mode
 
     def token_to_index(self, token):
+        """
+        返回token, 在字典token_index_dict中的索引
+         :param token: 
+        return: 
+        """
         try:
             return self.token_index_dict[token]
         except KeyError:
@@ -41,12 +47,24 @@ class IndexDictionary:
             return self.vocab_tokens[index]
 
     def index_sentence(self, sentence):
+        """
+        通过token_index_dict, 将单词列表处理为索引列表
+         :param sentence: 
+        return: 
+        """        
         return [self.token_to_index(token) for token in sentence]
 
     def tokenify_indexes(self, token_indexes):
         return [self.index_to_token(token_index) for token_index in token_indexes]
 
     def _build_vocabulary(self, iterable, vocabulary_size):
+        """
+        基于迭代器统计所有的tokens, 以及它们的次数
+        
+         :param iterable: 基于(src, tgt)的迭代器
+         :param vocabulary_size:
+        return: vocab_tokens 所有非重复标记, token_counts 非重复标记对应的次数
+        """        
 
         counter = Counter()
         for token in iterable:
@@ -65,6 +83,10 @@ class IndexDictionary:
         return vocab_tokens, token_counts
 
     def save(self, data_dir):
+        """
+        构建data_dir//vocabulary-{self.mode}.txt文件，每行写入{vocab_index, \t, vocab_token, \t, count, \n}
+         :param data_dir: 
+        """        
 
         vocabulary_filepath = join(data_dir, f'vocabulary-{self.mode}.txt')
         with open(vocabulary_filepath, 'w') as file:
@@ -88,7 +110,7 @@ class IndexDictionary:
             vocab_tokens = {k: v for k, v in vocab_tokens.items() if k < vocabulary_size}
             token_counts = token_counts[:vocabulary_size]
 
-        instance = cls(mode=mode)
+        instance = cls(mode=mode)       # instance = IndexDictionary(mode=mode)
         instance.vocab_tokens = vocab_tokens
         instance.token_counts = token_counts
         instance.token_index_dict = {token: index for index, token in vocab_tokens.items()}

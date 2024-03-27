@@ -113,6 +113,9 @@ class TranslationDataset:
 
 
 class TokenizedTranslationDatasetOnTheFly:
+    """
+        基于由原始src/tgt行构建的(src, tgt)数据集, 将其中的字符串处理为单词列表
+    """
 
     def __init__(self, phase, limit=None):
 
@@ -130,7 +133,7 @@ class TokenizedTranslationDatasetOnTheFly:
 
 class TokenizedTranslationDataset:
     """
-        基于(src, tgt)dataset，将元素句子字符串，处理为包含单词的列表
+        基于中间文件raw-***数据集，将元素句子字符串处理为包含单词的列表
     """
 
 
@@ -149,6 +152,9 @@ class TokenizedTranslationDataset:
 
 
 class InputTargetTranslationDatasetOnTheFly:
+    """
+        基于由原始src/tgt行构建的单词列表, 将其处理为三元组
+    """
 
     def __init__(self, phase, limit=None):
         self.tokenized_dataset = TokenizedTranslationDatasetOnTheFly(phase, limit)
@@ -165,6 +171,11 @@ class InputTargetTranslationDatasetOnTheFly:
 
 
 class InputTargetTranslationDataset:
+    """
+        基于中间文件raw-***.txt单词列表数据集, 添加首尾标记并划分inputs和targets
+        返回原始source, 划分后的inputs和targets
+
+    """
 
     def __init__(self, data_dir, phase, limit=None):
         self.tokenized_dataset = TokenizedTranslationDataset(data_dir, phase, limit)
@@ -181,6 +192,9 @@ class InputTargetTranslationDataset:
 
 
 class IndexedInputTargetTranslationDatasetOnTheFly:
+    """
+        基于由原始src/tgt行构建的三元组, 将其中的字符处理为数字形式
+    """
 
     def __init__(self, phase, source_dictionary, target_dictionary, limit=None):
 
@@ -211,6 +225,9 @@ class IndexedInputTargetTranslationDatasetOnTheFly:
 
 
 class IndexedInputTargetTranslationDataset:
+    """
+        将index-***.txt中的三元序列(source, input, target)由字符，处理为数字
+    """
 
     def __init__(self, data_dir, phase, vocabulary_size=None, limit=None):
 
@@ -218,7 +235,8 @@ class IndexedInputTargetTranslationDataset:
 
         unknownify = lambda index: index if index < vocabulary_size else UNK_INDEX
         with open(join(data_dir, f'indexed-{phase}.txt')) as file:
-            for line in file:
+            for line in file:   
+                    # .strip()去除首尾的空格
                 sources, inputs, targets = line.strip().split('\t')
                 if vocabulary_size is not None:
                     indexed_sources = [unknownify(int(index)) for index in sources.strip().split(' ')]
@@ -260,7 +278,16 @@ class IndexedInputTargetTranslationDataset:
 
     @staticmethod
     def prepare(data_dir, source_dictionary, target_dictionary):
+        """
+        基于raw-**.txt单词列表dataset中的source和target添加首尾后划分的inputs和target, 通过查找源域字典和目标域字典
+        找到对应的索引，保存在indexed-{phase}.txt文件中
+         :param data_dir: 
+         :param source_dictionary: 源域字典
+         :param target_dictionary: 目标域字典
+        """
 
+            # lambda x: f(x) 等价于 return f(x)
+            # sperator.join(iterator)，使用分割符将迭代器进行分割
         join_indexes = lambda indexes: ' '.join(str(index) for index in indexes)
         for phase in ('train', 'val'):
             input_target_dataset = InputTargetTranslationDataset(data_dir, phase)
