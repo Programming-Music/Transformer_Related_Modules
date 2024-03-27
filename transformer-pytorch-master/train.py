@@ -19,21 +19,21 @@ import json
 import random
 
 def get_parser():
+    """
+        为模型添加配置, 如数据路径, 模型超参数
+    
+    return: parser
+    """    
     parser = ArgumentParser(description='Train Transformer')
-    parser.add_argument('--config', type=str, default=None)
+    parser.add_argument('--config', type=str, default="configs/example_config.json")
 
-    parser.add_argument('--data_dir', type=str, default='data/example/processed')
-    parser.add_argument('--save_config', type=str, default=None)
-    parser.add_argument('--save_checkpoint', type=str, default=None)
-    parser.add_argument('--save_log', type=str, default=None)
-
-    parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu')
-
+        # 限制训练集大小，使用前N个实例进行训练
     parser.add_argument('--dataset_limit', type=int, default=None)
     parser.add_argument('--print_every', type=int, default=1)
-    parser.add_argument('--save_every', type=int, default=1)
+    parser.add_argument('--save_every', type=int, default=1)    
 
     parser.add_argument('--vocabulary_size', type=int, default=None)
+        # 将位置编码存放在内存而不是模型参数中，节省参数内存，但不可再变
     parser.add_argument('--positional_encoding', action='store_true')
 
     parser.add_argument('--d_model', type=int, default=128)
@@ -47,6 +47,13 @@ def get_parser():
     parser.add_argument('--lr', type=float, default=0.001)
     parser.add_argument('--clip_grads', action='store_true')
 
+
+    parser.add_argument('--data_dir', type=str, default='data/example/processed')
+    parser.add_argument('--save_config', type=str, default=None)
+    parser.add_argument('--save_checkpoint', type=str, default=None)
+    parser.add_argument('--save_log', type=str, default=None)
+
+    parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu')
     parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--epochs', type=int, default=100)
     return parser
@@ -158,7 +165,10 @@ if __name__ == '__main__':
         for key, default_value in default_config.items():
             if key not in config:
                 config[key] = default_value
+        print(config)
     else:
+            # vars作用一个对象(属性名-属性值)，返回一个dict(键-值)
         config = vars(args)  # convert to dictionary
+        # print(config)
 
     run_trainer(config)

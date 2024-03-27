@@ -18,6 +18,12 @@
   "lr": 0.001,
   "clip_grads": true,
 
-  "batch_size": 10,
-  "epochs": 10
+  "data_dir": "data/example/processed",
+  "save_config": null,
+  "save_checkpoint": null,
+  "save_log": null,
+
+  "device": "cuda",
+  "batch_size": 32,
+  "epochs": 100
 }
