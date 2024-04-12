@@ -47,7 +47,7 @@ class Parameters():
 
         self.epochs = 50
         
-        self.Train = False
+        self.Train = True
 
         self.use_gpu = True if torch.cuda.is_available() else False
 

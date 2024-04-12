@@ -24,6 +24,10 @@
 + 'CUDA_VISIBLE_DEVICES=0 python all.py'，指定GPU显卡来运行模型，'all.py'文件包括模型训练，验证和推理三个功能;
 + 可以在'parameters.py'文件中修改模型的全部参数。
 
+# 运行时间
++ 2060MaxQ 3min10s/epoch
++ 3080S 2min/epoch
+
 # 注意
 + 该复现的Tranformer模型主要是参考论文 [*Attention is all you need*](https://arxiv.org/abs/1706.03762)
 + 代码主要参考了该博主完整的transformer代码 [*jadore801120*](https://github.com/jadore801120/attention-is-all-you-need-pytorch)
