@@ -10,16 +10,20 @@ PAD_TOKEN_ID = 0
 
 
 def build_model(config, source_vocabulary_size, target_vocabulary_size):
+    """
+    定义source/target、embedding, 返回Encoder和Decoder封装模块的组合model
+    """    
     if config['positional_encoding']:
         source_embedding = PositionalEncoding(
             num_embeddings=source_vocabulary_size,
             embedding_dim=config['d_model'],
-            dim=config['d_model'])  # why dim?
+            dim=config['d_model'])  # why dim?  the dim of positional code, such as 
         target_embedding = PositionalEncoding(
             num_embeddings=target_vocabulary_size,
             embedding_dim=config['d_model'],
             dim=config['d_model'])  # why dim?
     else:
+            # Embedding将离散变量映射到低维的向量表示; num_embeddings对应词汇表的大小, embedding_dim表示向量的维度大小
         source_embedding = nn.Embedding(
             num_embeddings=source_vocabulary_size,
             embedding_dim=config['d_model'])
@@ -74,6 +78,15 @@ class Transformer(nn.Module):
 class TransformerEncoder(nn.Module):
 
     def __init__(self, layers_count, d_model, heads_count, d_ff, dropout_prob, embedding):
+        """
+        
+         :param layers_count: 层数，
+         :param d_model:    模型
+         :param heads_count:    head个数
+         :param d_ff:   线性层中隐藏层大小
+         :param dropout_prob: 
+         :param embedding: 
+        """        
         super(TransformerEncoder, self).__init__()
 
         self.d_model = d_model

@@ -10,7 +10,7 @@ class NoamOptimizer(Adam):
         self.lr = 0
         self.step_num = 0
         self.factor = factor
-
+            # 调用父类Adam类的初始化函数, 一边Noam使用Adam的功能和特性
         super(NoamOptimizer, self).__init__(params, betas=betas, eps=eps)
 
     def step(self, closure=None):

@@ -60,10 +60,19 @@ def get_parser():
 
 
 def run_trainer(config):
+    """
+    设置日志, 打印并将模型信息写入日志
+    设置train/val dataloader, 损失/准确率函数, 优化器, 模型定义和执行
+    
+     :param config: 
+    return: 
+    """    
+        # 将python, numpy, torch等三个的随机数种子都设置为零, 以确保模型的可复现性
     random.seed(0)
     np.random.seed(0)
     torch.manual_seed(0)
 
+        # 生成带时间戳的运行名称
     run_name_format = (
         "d_model={d_model}-"
         "layers_count={layers_count}-"
@@ -72,7 +81,7 @@ def run_trainer(config):
         "optimizer={optimizer}-"
         "{timestamp}"
     )
-
+        # 通过format函数，**dict解包和指定timestamp等形式，对字符串进行处理
     run_name = run_name_format.format(**config, timestamp=datetime.now().strftime("%Y_%m_%d_%H_%M_%S"))
 
     logger = get_logger(run_name, save_log=config['save_log'])
@@ -94,6 +103,7 @@ def run_trainer(config):
     logger.info('Total : {parameters_count} parameters'.format(parameters_count=sum([p.nelement() for p in model.parameters()])))
 
     logger.info('Loading datasets...')
+
     train_dataset = IndexedInputTargetTranslationDataset(
         data_dir=config['data_dir'],
         phase='train',
@@ -115,6 +125,7 @@ def run_trainer(config):
     val_dataloader = DataLoader(
         val_dataset,
         batch_size=config['batch_size'],
+            # shuffle default is False
         collate_fn=input_target_collate_fn)
 
     if config['label_smoothing'] > 0.0:
@@ -123,9 +134,13 @@ def run_trainer(config):
     else:
         loss_function = TokenCrossEntropyLoss()
 
+        """
+            损失函数是最目标最小化、连续可导的函数; 准确率函数则是离散性能指标
+        """
     accuracy_function = AccuracyMetric()
 
     if config['optimizer'] == 'Noam':
+        # 基于Adam调整学习率
         optimizer = NoamOptimizer(model.parameters(), d_model=config['d_model'])
     elif config['optimizer'] == 'Adam':
         optimizer = Adam(model.parameters(), lr=config['lr'])
@@ -165,10 +180,8 @@ if __name__ == '__main__':
         for key, default_value in default_config.items():
             if key not in config:
                 config[key] = default_value
-        print(config)
     else:
             # vars作用一个对象(属性名-属性值)，返回一个dict(键-值)
         config = vars(args)  # convert to dictionary
-        # print(config)
 
     run_trainer(config)

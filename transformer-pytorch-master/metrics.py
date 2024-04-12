@@ -20,6 +20,7 @@ class AccuracyMetric(nn.Module):
 
         corrects.masked_fill_((targets == self.pad_index), 0)
 
+            # 分别是预测正确标记，总有效非空标记
         correct_count = corrects.sum().item()
         count = (targets != self.pad_index).sum().item()
 

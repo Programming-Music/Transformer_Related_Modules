@@ -18,6 +18,7 @@ class TokenCrossEntropyLoss(nn.Module):
 
         batch_loss = self.base_loss_function(outputs_flat, targets_flat)
 
+            # count记录有效标记（非padding）的个数, item()将tensor转为python数值
         count = (targets != self.pad_index).sum().item()
 
         return batch_loss, count
@@ -35,12 +36,15 @@ class LabelSmoothingLoss(nn.Module):
         super(LabelSmoothingLoss, self).__init__()
 
         self.pad_index = pad_index
+            # 对最后一维向量进行操作
         self.log_softmax = nn.LogSoftmax(dim=-1)
         self.criterion = nn.KLDivLoss(reduction='sum')
 
         smoothing_value = label_smoothing / (vocabulary_size - 2)  # exclude pad and true label
+            # full/fill ope, by specific dimension and value
         smoothed_targets = torch.full((vocabulary_size,), smoothing_value)
         smoothed_targets[self.pad_index] = 0
+            # 基于Module类提供方法注册一个buffer缓冲区，方便在后续loss计算中直接使用
         self.register_buffer('smoothed_targets', smoothed_targets.unsqueeze(0))  # (1, vocabulary_size)
 
         self.confidence = 1.0 - label_smoothing
@@ -56,14 +60,17 @@ class LabelSmoothingLoss(nn.Module):
         outputs_flat = outputs_log_softmax.view(batch_size * seq_len, vocabulary_size)
         targets_flat = targets.view(batch_size * seq_len)
 
+            # repeat(a, b), 在第一个维度重复a次, 在第二个维度重复b次
         smoothed_targets = self.smoothed_targets.repeat(targets_flat.size(0), 1)
-        # smoothed_targets: (batch_size * seq_len, vocabulary_size)
+        # smoothed_targets: (vocab_size) -> (batch_size * seq_len, vocab_size)
 
+            # scatter_(dim,index,source)按照索引,将source插入到向量的dim维度中。
+            # eg. scatter_(1, torch.zeros((5, 6)), torch.arange(5)) 结果为对角矩阵
+            # 即原始的target(batch_size * seq_len)其中部分为1，平滑后(b_s * seq, vocab)在每行(b_s*seq)寻找之前的target
         smoothed_targets.scatter_(1, targets_flat.unsqueeze(1), self.confidence)
-        # smoothed_targets: (batch_size * seq_len, vocabulary_size)
 
+            # masked_fill_(index,value)，对pad_index的地方赋零值
         smoothed_targets.masked_fill_((targets_flat == self.pad_index).unsqueeze(1), 0)
-        # masked_targets: (batch_size * seq_len, vocabulary_size)
 
         loss = self.criterion(outputs_flat, smoothed_targets)
         count = (targets != self.pad_index).sum().item()
